@@ -6,7 +6,7 @@
   --color-on-primary-container: #708ab5;
   --color-secondary: #50606f;
   --color-secondary-container: #d1e1f4;
-  --color-tertiary: #369c31; /* Forest Green */
+  --color-tertiary: #5c2d91; /* WOSM Purple */
   --color-background: #fcf9f8;
   --color-on-background: #1c1b1b;
   --color-surface: #ffffff;
@@ -57,7 +57,15 @@ a.text-tertiary, span.text-tertiary, div.text-tertiary, i.text-tertiary {
   color: var(--color-on-background) !important;
 }
 
-.text-white, a.text-white, span.text-white, div.text-white {
+.text-on-primary, 
+h1.text-on-primary, h2.text-on-primary, h3.text-on-primary, h4.text-on-primary, h5.text-on-primary, h6.text-on-primary,
+a.text-on-primary, span.text-on-primary, div.text-on-primary, i.text-on-primary {
+  color: #ffffff !important;
+}
+
+.text-white, 
+h1.text-white, h2.text-white, h3.text-white, h4.text-white, h5.text-white, h6.text-white,
+a.text-white, span.text-white, div.text-white, i.text-white {
   color: #ffffff !important;
 }
 
@@ -296,3 +304,14 @@ nav.bg-surface span.text-primary {
 hr {
   border-top-color: var(--color-outline-variant) !important;
 }
+
+/* Custom Dropdown Hover Logic */
+.nav-group:hover > .nav-dropdown {
+  display: block !important;
+}
+
+/* Smooth Chevron Rotation on Hover */
+.nav-group:hover .rotate-on-hover {
+  transform: rotate(180deg) !important;
+}
+

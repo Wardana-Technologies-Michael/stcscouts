@@ -25,10 +25,10 @@ colors:
   on-secondary: '#ffffff'
   secondary-container: '#d1e1f4'
   on-secondary-container: '#556474'
-  tertiary: '#000e00'
+  tertiary: '#5c2d91'
   on-tertiary: '#ffffff'
-  tertiary-container: '#002802'
-  on-tertiary-container: '#369c31'
+  tertiary-container: '#f0eaf7'
+  on-tertiary-container: '#5c2d91'
   error: '#ba1a1a'
   on-error: '#ffffff'
   error-container: '#ffdad6'
@@ -41,10 +41,10 @@ colors:
   secondary-fixed-dim: '#b8c8da'
   on-secondary-fixed: '#0d1d2a'
   on-secondary-fixed-variant: '#394857'
-  tertiary-fixed: '#92fa83'
-  tertiary-fixed-dim: '#77dd6a'
-  on-tertiary-fixed: '#002201'
-  on-tertiary-fixed-variant: '#005307'
+  tertiary-fixed: '#ebdbfa'
+  tertiary-fixed-dim: '#c084fc'
+  on-tertiary-fixed: '#3b0764'
+  on-tertiary-fixed-variant: '#6b21a8'
   background: '#fcf9f8'
   on-background: '#1c1b1b'
   surface-variant: '#e5e2e1'
@@ -127,7 +127,7 @@ The palette is anchored by **Deep Navy**, representing tradition and leadership.
 
 - **Primary (Navy Blue):** Used for brand-critical elements and core navigation.
 - **Secondary (Slate Gray):** Provides professional depth. Used for secondary actions, iconography, and supporting text.
-- **Tertiary (Forest Green):** A nod to scouting heritage. Use sparingly for success states, badge-related accents, or small callouts. 
+- **Tertiary (WOSM Purple):** Inspired by the World Organization of the Scout Movement emblem. Used for hover highlights, badge-related accents, or active states.
 - **Neutral (Charcoal/Black):** Reserved for high-legibility body text and headers.
 - **Surface:** A "Clean White" base is supplemented by "Subtle Light Gray" (#F8FAFC) to create logical divisions between content sections without using heavy borders.
 
@@ -181,7 +181,7 @@ The design system employs **Soft** roundedness (0.25rem). This choice balances t
 
 ### Chips & Badges
 - Used for scout ranks or status. 
-- Solid Forest Green for "Active" or "Complete" states. 
+- Solid WOSM Purple for "Active" or "Complete" states. 
 - Solid Slate Gray for "Pending" or "Draft" states.
 
 ### Lists
@@ -190,4 +190,4 @@ The design system employs **Soft** roundedness (0.25rem). This choice balances t
 
 ### Scouting Specifics
 - **Member Directory:** Profile cards should feature a circular avatar with a 2px Navy Blue stroke.
-- **Progress Tracker:** Use a thick (8px) horizontal Forest Green bar for progress, set against a Slate Gray track.
+- **Progress Tracker:** Use a thick (8px) horizontal Purple bar for progress, set against a Slate Gray track.
