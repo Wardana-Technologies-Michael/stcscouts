@@ -40,8 +40,9 @@
                             <p class="text-dark text-center text-4">Find us on Facebook: <a href="https://www.facebook.com/stcscouts">Thomian Scout Troop</a></p>
 
                             <div class="col-md-12 align-self-center p-static order-2 text-center">
-
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3688.061940898536!2d79.865034!3d6.837401!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b185cb65ba3%3A0x359e4cab22d61c21!2sS.%20Thomas&#39;%20College!5e1!3m2!1sen!2slk!4v1690163091413!5m2!1sen!2slk" width="800" height="450" style="border:0; center;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <div style="max-width: 800px; margin: 0 auto;">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3688.061940898536!2d79.865034!3d6.837401!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b185cb65ba3%3A0x359e4cab22d61c21!2sS.%20Thomas&#39;%20College!5e1!3m2!1sen!2slk!4v1690163091413!5m2!1sen!2slk" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
                             </div>
                             
                         

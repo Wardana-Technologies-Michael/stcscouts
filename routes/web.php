@@ -65,6 +65,10 @@ Route::get('/the-scout-dunk', function () {
     return view('the-scout-dunk');
 });
 
+Route::get('/kindling-legacy', function () {
+    return view('kindling-legacy');
+});
+
 Route::get('/badgework-old-syllabus', function () {
     return view('badgework-old-syllabus');
 });
@@ -74,7 +78,7 @@ Route::get('/cub-pack-leaders', function () {
 });
 
 Route::get('/history-of-scouting-at-college', function () {
-    return view('History/History-of-scouting-at-college');
+    return view('History/history-of-scouting-at-college');
 });
 
 
@@ -114,7 +118,7 @@ Route::get('/17th-Asia-Pacific-Scout-Jamboree-1996', function () {
 });
 
 Route::get('/Tidal-Wave-1996', function () {
-    return view('Recent_Year_Reports/1996/Tidal-Wave-1996');
+    return view('Recent_Year_Reports/1996/tidal-Wave-1996');
 });
 
 Route::get('/year-report-1996', function () {
@@ -171,7 +175,7 @@ Route::get('/year-report-2001', function () {
 });
 
 Route::get('/Tribe-Out-2002', function () {
-    return view('Recent_Year_Reports/2002/Tribe-Out-2002');
+    return view('Recent_Year_Reports/2002/tribe-out-2002');
 });
 
 Route::get('/year-report-2002', function () {
@@ -234,7 +238,7 @@ Route::get('/Centennial-Flames-2012', function () {
 
 
 Route::get('/International-Achievement', function () {
-    return view('Recent_Year_Reports/2012/International-Achievement');
+    return view('Recent_Year_Reports/2012/international-achievement');
 });
 
 Route::get('/year-report-2012', function () {
@@ -266,7 +270,7 @@ Route::get('/year-report-2018', function () {
 });
 
 Route::get('/Escapade-2019', function () {
-    return view('Recent_Year_Reports/2019/Escapade-2019');
+    return view('Recent_Year_Reports/2019/escapade-2019');
 });
 
 Route::get('/year-report-2019', function () {

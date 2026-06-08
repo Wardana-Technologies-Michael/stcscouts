@@ -1,430 +1,245 @@
 @extends('layouts.master')
 
 @section('content')
-    <section class="section border-0 m-0"
-        style="background-image: url(images/front_slide.jpg); background-size:
-				cover; background-position: center; height: 542px;">
-        <div class="container h-100">
-            <div class="row align-items-end h-100">
-                <div class="col">
-                    <div class="d-flex flex-column align-items-center justify-content-center h-100">
-                        <h1 class="position-relative text-color-light text-5 line-height-5
-									font-weight-semibold px-4 mb-2 appear-animation"
-                            data-appear-animation="fadeInDownShorterPlus" data-plugin-options="{'minWindowWidth': 0}">
-                            <span class="position-absolute right-100pct top-50pct transform3dy-n50">
-                                <img src="img/slides/slide-title-border-light.png" class="w-auto appear-animation"
-                                    data-appear-animation="fadeInRightShorter" data-appear-animation-delay="250"
-                                    data-plugin-options="{'minWindowWidth': 0}" alt="" />
-                            </span>
-
-                            WELCOME
-                            <span class="position-absolute left-100pct top-50pct transform3dy-n50">
-                                <img src="img/slides/slide-title-border-light.png" class="w-auto appear-animation"
-                                    data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="250"
-                                    data-plugin-options="{'minWindowWidth': 0}" alt="" />
-                            </span>
-                        </h1>
-                        <h1 class="text-color-light font-weight-extra-bold text-12 mb-3 appear-animation"
-                            data-appear-animation="bounceIn" data-appear-animation-delay="1000"
-                            data-plugin-options="{'minWindowWidth': 0}">STC SCOUTS</h1>
-
-
-                        <p class="text-4 text-color-light font-weight-light mb-0"
-                            style="text-align: center;
-                            " data-appear-animation="fadeInUp"
-                            data-plugin-options="{'startDelay': 3000, 'minWindowWidth': 0}">
-                            The Official Web Portal of the 16<sup>th</sup> Colombo Scout Group of S. Thomas'
-                            College, Mount Lavinia
-                        </p>
-
-                        {{--									<p class="text-4 text-color-light font-weight-light mb-0" --}}
-                        {{--									   data-plugin-animated-letters data-plugin-options="{'startDelay': 2000, --}}
-                        {{--									   'minWindowWidth': 0}"> --}}
-                        {{--										The Official Web Portal of the 16<sup>th</sup> Colombo Scout Group of S. Thomas' College, Mount Lavinia --}}
-                        {{--									</p> --}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{--        <div class="home-intro light border border-bottom-0 mb-0"> --}}
-    {{--            <div class="container"> --}}
-
-    {{--                <div class="row align-items-center"> --}}
-    {{--                    <div class="col-lg-8"> --}}
-    {{--                        <p class="font-weight-bold text-color-dark"> --}}
-    {{--                            The fastest way to grow your business with the leader in <span --}}
-    {{--                                    class="highlighted-word highlighted-word-animation-1 text-color-primary font-weight-semibold text-5">Technology</span> --}}
-    {{--                            <span>Check out our options and features included.</span> --}}
-    {{--                        </p> --}}
-    {{--                    </div> --}}
-    {{--                    <div class="col-lg-4"> --}}
-    {{--                        <div class="get-started text-start text-lg-end"> --}}
-    {{--                            <a href="#" class="btn btn-primary btn-lg text-3 font-weight-semibold btn-py-2 px-4">Get --}}
-    {{--                                Started Now</a> --}}
-    {{--                            <div class="learn-more">or <a href="index.html" class="font-weight-bold">learn more.</a> --}}
-    {{--                            </div> --}}
-    {{--                        </div> --}}
-    {{--                    </div> --}}
-    {{--                </div> --}}
-
-    {{--            </div> --}}
-    {{--        </div> --}}
-
-    <div class="container py-5"
-        style="background-image: url(images/flames.jpg);  background-size: cover;
-        background-position: center;">
-        <div class="row text-center py-3">
-            <div class="col-md-10 mx-md-auto">
-                <h1 class="word-rotator slide font-weight-bold text-8 mb-3 appear-animation"
-                    data-appear-animation="fadeInUpShorter">
-                    <span>Are you a </span>
-                    <span class="word-rotator-words bg-primary">
-                        <b class="is-visible">Smart</b>
-                        <b>Courteous</b>
-                        <b>Obedient</b>
-                        <b>Useful</b>
-                        <b>Trustworthy</b>
-                    </span>
-                    <span> Citizen? </span>
-                </h1>
-
-                <p class="text-dark lead appear-animation mb-0" data-appear-animation="fadeInUpShorter"
-                    data-appear-animation-delay="300">
-                    <br />
-                    Quite apart from all your books at home, school and the usual routine in your daily life
-                    including surfing the net and playing computer games, here is a chance for you to try something
-                    new in your life – a new avenue awaits you... Something which you have probably never dreamed
-                    of...
-
-                    <br /><br />
-
-                    Started in Sri Lanka with the prime objective of making "better use" of the free time of
-                    boys, Scouting has grown to be a worldwide movement. The World Scout Movement is now the
-                    biggest youth body in the world comprising more than 50 million members, boasting a history
-                    of over a centenary, since its inception in 1907 as the brainchild of Lord Robert Baden-Powell.
-                    <br /><br />
-                    Scouting is a worldwide movement for youth aimed at producing community-minded, independent
-                    and abled individuals and young leaders who see beyond sectarianism and narrow self-interest in
-                    the ordering of their lives and influencing the lives of people around them.
-                    <br /><br />
-
-                    Among the many Scout Troops in Sri Lanka, the 16<sup>th</sup> Colombo Scout Group of S. Thomas’
-                    College, Mount Lavinia has excelled exceptionally well for over 100 years, and earning the reputation as
-                    "The Model Scout Group" on the island.
-
-                </p>
-            </div>
-        </div>
+<main class="bg-background text-on-background min-h-screen">
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] min-h-[500px] w-full flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img class="w-full h-full object-cover object-center" 
+           alt="STC Scouts Campfire Dusk" 
+           src="{{ asset('images/front_slide.jpg') }}"/>
+      <div class="absolute inset-0 bg-primary/65 backdrop-blur-[2px]"></div>
     </div>
-
-    <section class="section section-height-5 bg-primary border-0 pt-5 m-0 appear-animation" data-appear-animation="fadeIn">
-        <div class="container">
-            <div class="row mt-4 mt-lg-5">
-                <div class="col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter"
-                    data-appear-animation-delay="200">
-                    <div class="feature-box">
-                        <div class="feature-box-icon feature-box-icon-large bg-light mt-1">
-                            <i class="icons icon-support text-color-primary text-6"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h2 class="text-color-light font-weight-bold text-4 line-height-5 mb-1">CUSTOMER
-                                SUPPORT</h2>
-                            <p class="text-color-light opacity-7">Lorem ipsum dolor sit <span
-                                    class="alternative-font text-color-light">amet</span>, consectetur
-                                adipiscing elit. Praesent tincidunt pretium vulputate.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 appear-animation" data-appear-animation="fadeInUpShorter">
-                    <div class="feature-box">
-                        <div class="feature-box-icon feature-box-icon-large bg-light mt-1">
-                            <i class="icons icon-layers text-color-primary text-6"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h2 class="font-weight-bold text-color-light text-4 line-height-5 mb-1">SLIDERS</h2>
-                            <p class="text-color-light opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Sed eget pretium purus.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter"
-                    data-appear-animation-delay="200">
-                    <div class="feature-box">
-                        <div class="feature-box-icon feature-box-icon-large bg-light mt-1">
-                            <i class="icons icon-menu text-color-primary text-5"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h2 class="font-weight-bold text-color-light text-4 line-height-5 mb-1">BUTTONS</h2>
-                            <p class="text-color-light opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Etiam vel magna fringilla.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-lg-4">
-                <div class="col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter"
-                    data-appear-animation-delay="200">
-                    <div class="feature-box">
-                        <div class="feature-box-icon feature-box-icon-large bg-light mt-1">
-                            <i class="icons icon-doc text-color-primary text-5"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h2 class="font-weight-bold text-color-light text-4 line-height-5 mb-1">HTML5 / CSS3 /
-                                JS</h2>
-                            <p class="text-color-light opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Duis dignissim ante eleifend.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 appear-animation" data-appear-animation="fadeInUpShorter">
-                    <div class="feature-box">
-                        <div class="feature-box-icon feature-box-icon-large bg-light mt-1">
-                            <i class="icons icon-user text-color-primary text-5"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h2 class="font-weight-bold text-color-light text-4 line-height-5 mb-1">ICONS</h2>
-                            <p class="text-color-light opacity-7">Lorem ipsum dolor sit <span
-                                    class="alternative-font text-color-light">amet</span>, consectetur
-                                adipiscing elit. Praesent consequat pharetra massa.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter"
-                    data-appear-animation-delay="200">
-                    <div class="feature-box">
-                        <div class="feature-box-icon feature-box-icon-large bg-light mt-1">
-                            <i class="icons icon-screen-desktop text-color-primary text-6"></i>
-                        </div>
-                        <div class="feature-box-info">
-                            <h2 class="font-weight-bold text-color-light text-4 line-height-5 mb-1">LIGHTBOX</h2>
-                            <p class="text-color-light opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Nulla condimentum aliquet erat.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section bg-color-grey border-0 pt-0 pt-md-5 m-0">
-        <div class="container">
-            <div class="row align-items-center justify-content-center pb-4 pb-lg-0">
-                <div class="col-lg-6 order-2 order-lg-1 pe-5 pt-4 pt-lg-0 mt-md-5 mt-lg-0 appear-animation"
-                    data-appear-animation="fadeInRightShorter">
-                    <h2 class="font-weight-normal text-6 mb-3"><strong class="font-weight-extra-bold">Who</strong>
-                        We Are</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa
-                        enim. Nullam id valorem ipsum dolor sit amet, consectetur adipiscinorem ipsum dolor sit
-                        amet, consectetur adipiscing elit.</p>
-                    <p class="pb-2 mb-4">Phasellus blandit massa enim. Nullam id varius elit. blandit massa
-                        enimariusius.</p>
-                    <a href="#" class="btn btn-dark font-weight-semibold btn-py-2 px-5">Our History</a>
-                </div>
-                <div class="col-9 col-lg-6 order-1 order-lg-2 scale-6 pb-5 pb-lg-0 mt-0 mt-md-4 mb-5 mb-lg-0">
-                    <img class="img-fluid appear-animation" src="img/desktop-device-1.png"
-                        data-appear-animation="fadeInRightShorter" data-appear-animation-delay="300"
-                        data-plugin-options="{'accY': -400}" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <div class="featured-boxes py-5 mt-5 mb-4">
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="featured-box featured-box-primary featured-box-effect-1">
-                        <div class="box-content">
-                            <i class="icon-featured icons icon-people"></i>
-                            <h3 class="text-color-primary font-weight-bold text-3 mb-2 mt-3">Loved by Customers</h3>
-                            <p class="px-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p><a href="/" class="text-dark learn-more font-weight-bold text-2">VIEW MORE <i
-                                        class="fas fa-chevron-right ms-2"></i></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="featured-box featured-box-dark featured-box-effect-1">
-                        <div class="box-content">
-                            <i class="icon-featured icons icon-docs"></i>
-                            <h3 class="font-weight-bold text-3 mb-2 mt-3">Well Documented</h3>
-                            <p class="px-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p><a href="/" class="text-dark learn-more font-weight-bold text-2">VIEW MORE <i
-                                        class="fas fa-chevron-right ms-2"></i></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="featured-box featured-box-primary featured-box-effect-1">
-                        <div class="box-content">
-                            <i class="icon-featured icons icon-trophy"></i>
-                            <h3 class="text-color-primary font-weight-bold text-3 mb-2 mt-3">Winner</h3>
-                            <p class="px-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p><a href="/" class="text-dark learn-more font-weight-bold text-2">VIEW MORE <i
-                                        class="fas fa-chevron-right ms-2"></i></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="featured-box featured-box-dark featured-box-effect-1">
-                        <div class="box-content">
-                            <i class="icon-featured icons icon-equalizer"></i>
-                            <h3 class="font-weight-bold text-3 mb-2 mt-3">Customizable</h3>
-                            <p class="px-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p><a href="/" class="text-dark learn-more font-weight-bold text-2">VIEW MORE <i
-                                        class="fas fa-chevron-right ms-2"></i></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center text-on-primary">
+      <h1 class="text-display font-display font-bold text-on-primary mb-stack-md max-w-4xl mx-auto tracking-tight drop-shadow-md leading-tight">
+        Prepared. For Life.
+      </h1>
+      <p class="text-body-lg font-normal text-surface-container-low mb-stack-lg max-w-3xl mx-auto opacity-90 leading-relaxed">
+        The Official Web Portal of the 16th Colombo Scout Group of S. Thomas' College, Mount Lavinia. Combines knowledge with fun to build character and foster citizenship.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="{{ url('/contact') }}" 
+           class="inline-flex justify-center items-center bg-surface text-primary font-bold text-sm tracking-wider uppercase px-8 py-4 rounded border border-transparent hover:bg-surface-container transition-all shadow-sm w-full sm:w-auto">
+          Join Our Troop
+        </a>
+        <a href="{{ url('/about-the-site') }}" 
+           class="inline-flex justify-center items-center border border-surface text-surface hover:bg-white/10 font-bold text-sm tracking-wider uppercase px-8 py-4 rounded transition-all w-full sm:w-auto">
+          About Us
+        </a>
+      </div>
     </div>
+  </section>
 
-    <section class="section section-height-3 section-background border-0 m-0 appear-animation"
-        data-appear-animation="fadeIn"
-        style="background-image: url(img/parallax/parallax-10.jpg); background-size: cover; background-position: center;">
-        <div class="container">
-            <div class="row">
-                <div class="col appear-animation" data-appear-animation="fadeInUpShorter"
-                    data-appear-animation-delay="200">
-
-                    <div class="owl-carousel owl-theme nav-bottom rounded-nav"
-                        data-plugin-options="{'items': 1, 'loop': false}">
-                        <div>
-                            <div
-                                class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark mb-0">
-                                <div class="testimonial-author">
-                                    <img src="img/clients/client-1.jpg" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <blockquote>
-                                    <p class="text-color-dark text-5 line-height-5 mb-0">Lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at,
-                                        interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Sociis natoque penatibus et magnis dis
-                                        parturient montes, nascetur ridiculus mus. Fusce ante tellus, convallis non
-                                        consectetur sed, pharetra nec ex.</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                    <p><strong class="font-weight-extra-bold text-2">- John Smith. Okler</strong>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div
-                                class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark mb-0">
-                                <div class="testimonial-author">
-                                    <img src="img/clients/client-1.jpg" class="img-fluid rounded-circle" alt="">
-                                </div>
-                                <blockquote>
-                                    <p class="text-color-dark text-5 line-height-5 mb-0">Lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at,
-                                        interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet,
-                                        consectetur adipiscing elit.</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                    <p><strong class="font-weight-extra-bold text-2">- John Smith. Okler</strong>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <div class="row pt-5 mt-4">
-            <div class="col">
-                <h2 class="font-weight-normal text-6 mb-4"><strong class="font-weight-extra-bold">Latest</strong>
-                    Posts</h2>
-            </div>
-        </div>
-        <div class="row recent-posts pb-5 mb-4">
-            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-                <article>
-                    <div class="row">
-                        <div class="col-auto pe-0">
-                            <div class="date">
-                                <span class="day text-color-dark font-weight-extra-bold">15</span>
-                                <span class="month text-1">JAN</span>
-                            </div>
-                        </div>
-                        <div class="col ps-1">
-                            <h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark">Lorem ipsum
-                                    dolor sit amet, consectetur</a></h4>
-                            <p class="line-height-5 pe-4 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit.</p>
-                            <a href="/" class="read-more text-color-dark font-weight-bold text-2">read more <i
-                                    class="fas fa-chevron-right text-1 ms-1"></i></a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-                <article>
-                    <div class="row">
-                        <div class="col-auto pe-0">
-                            <div class="date">
-                                <span class="day text-color-dark font-weight-extra-bold">14</span>
-                                <span class="month text-1">JAN</span>
-                            </div>
-                        </div>
-                        <div class="col ps-1">
-                            <h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark">Lorem ipsum
-                                    dolor sit amet, consectetur</a></h4>
-                            <p class="line-height-5 pe-4 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit.</p>
-                            <a href="/" class="read-more text-color-dark font-weight-bold text-2">read more <i
-                                    class="fas fa-chevron-right text-1 ms-1"></i></a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                <article>
-                    <div class="row">
-                        <div class="col-auto pe-0">
-                            <div class="date">
-                                <span class="day text-color-dark font-weight-extra-bold">13</span>
-                                <span class="month text-1">JAN</span>
-                            </div>
-                        </div>
-                        <div class="col ps-1">
-                            <h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark">Lorem ipsum
-                                    dolor sit amet, consectetur</a></h4>
-                            <p class="line-height-5 pe-4 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit.</p>
-                            <a href="/" class="read-more text-color-dark font-weight-bold text-2">read more <i
-                                    class="fas fa-chevron-right text-1 ms-1"></i></a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <article>
-                    <div class="row">
-                        <div class="col-auto pe-0">
-                            <div class="date">
-                                <span class="day text-color-dark font-weight-extra-bold">12</span>
-                                <span class="month text-1">JAN</span>
-                            </div>
-                        </div>
-                        <div class="col ps-1">
-                            <h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark">Lorem ipsum
-                                    dolor sit amet, consectetur</a></h4>
-                            <p class="line-height-5 pe-4 mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit.</p>
-                            <a href="/" class="read-more text-color-dark font-weight-bold text-2">read more <i
-                                    class="fas fa-chevron-right text-1 ms-1"></i></a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
+  <!-- Word Rotator / Core Philosophy -->
+  <section class="py-20 bg-surface-container-lowest border-b border-outline-variant/35">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+      <div class="mb-8">
+        <span class="text-3xl md:text-5xl font-bold text-primary">Are you a </span>
+        <span class="inline-block bg-primary text-on-primary px-4 py-1.5 rounded-lg text-3xl md:text-5xl font-bold transition-all duration-350 ease-in-out min-w-[200px]" id="rotator-text">Smart</span>
+        <span class="text-3xl md:text-5xl font-bold text-primary"> Citizen?</span>
+      </div>
+      <p class="text-body-lg text-on-background max-w-3xl mx-auto leading-relaxed">
+        Scouting is a worldwide youth movement aimed at producing community-minded, independent, and capable young leaders who look beyond self-interest. 
+        As the <strong>"Model Scout Group"</strong> of Sri Lanka for over a century, the 16th Colombo Scout Group combines tradition with outdoor learning.
+      </p>
     </div>
+  </section>
+
+  <!-- Our Values Bento Grid -->
+  <section class="py-24 bg-surface">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="mb-16 text-center">
+        <h2 class="text-headline-lg font-bold text-primary mb-4">Our Values</h2>
+        <p class="text-body-lg text-secondary max-w-2xl mx-auto">
+          The core principles that guide our scouts and shape their growth.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Value 1: Adventure -->
+        <div class="bg-surface-container rounded-xl p-8 border border-outline-variant/30 hover:border-primary/20 transition-all duration-300 md:col-span-2 flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">explore</span>
+            <h3 class="text-title-lg font-bold text-primary mb-3">Adventure &amp; Outdoors</h3>
+            <p class="text-body-md text-secondary leading-relaxed">
+              We believe in the transformative power of nature. Through regular camping, rugged hiking expeditions, and survival training, scouts learn resilience, self-reliance, and deep respect for the environment.
+            </p>
+          </div>
+        </div>
+
+        <!-- Value 2: Service -->
+        <div class="bg-surface-container rounded-xl p-8 border border-outline-variant/30 hover:border-primary/20 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">handshake</span>
+            <h3 class="text-title-lg font-bold text-primary mb-3">Community Service</h3>
+            <p class="text-body-md text-secondary leading-relaxed">
+              Giving back is at our core. We engage in community development and park restoration projects, driving social responsibility in our youth.
+            </p>
+          </div>
+        </div>
+
+        <!-- Value 3: Leadership -->
+        <div class="bg-surface-container rounded-xl p-8 border border-outline-variant/30 hover:border-primary/20 transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-4xl text-primary mb-4">verified_user</span>
+            <h3 class="text-title-lg font-bold text-primary mb-3">Character &amp; Leadership</h3>
+            <p class="text-body-md text-secondary leading-relaxed">
+              Fostering integrity, discipline, and ethical decision-making. We empower scouts to take command of patrols and lead with honor.
+            </p>
+          </div>
+        </div>
+
+        <!-- Value 4: Skill Development -->
+        <div class="bg-surface-container rounded-xl p-8 border border-outline-variant/30 hover:border-primary/20 transition-all duration-300 md:col-span-2 relative overflow-hidden group">
+          <div class="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300 z-0"></div>
+          <div class="relative z-10 flex flex-col justify-between h-full">
+            <div>
+              <span class="material-symbols-outlined text-4xl text-primary mb-4">school</span>
+              <h3 class="text-title-lg font-bold text-primary mb-3">Skill Development</h3>
+              <p class="text-body-md text-secondary leading-relaxed">
+                From emergency first aid to pioneering and map work, our structured syllabus and merit badge programs offer diverse, hands-on learning that prepares youth for real-world challenges.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Historical Spotlight / About the Troop Card -->
+  <section class="py-20 bg-surface-container-low border-t border-b border-outline-variant/30">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="bg-surface rounded-xl border border-outline-variant/40 overflow-hidden shadow-sm flex flex-col lg:flex-row items-center">
+        <div class="w-full lg:w-1/2 h-80 lg:h-[450px] overflow-hidden">
+          <img class="w-full h-full object-cover" 
+               alt="16th Colombo Scout Group Historical Portrait" 
+               src="{{ asset('images/16th-Colombo-Scout-Troop2.jpg') }}"/>
+        </div>
+        <div class="w-full lg:w-1/2 p-8 md:p-12 flex flex-col gap-6">
+          <span class="text-xs font-bold text-tertiary tracking-widest uppercase">Over A Centenary of Excellence</span>
+          <h2 class="text-headline-lg font-bold text-primary leading-tight">The Heritage of S. Thomas' College Scouts</h2>
+          <p class="text-body-md text-secondary leading-relaxed">
+            The 16th Colombo Scout Group was founded with a vision to build character and foster growth. Combining traditional scouting skills with modern leadership training, our troop has established a legendary standard on the island, producing outstanding citizens, President's Scouts, and leaders in all sectors of society.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-2">
+            <a href="{{ url('history-of-scouting-at-college') }}" 
+               class="inline-flex items-center gap-2 bg-primary text-on-primary font-bold text-xs tracking-wider uppercase px-6 py-3.5 rounded hover:bg-primary-container transition-all">
+              Descriptive History
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+            <a href="{{ url('troop-profile') }}" 
+               class="inline-flex items-center gap-2 border border-secondary text-secondary hover:bg-secondary-container/20 font-bold text-xs tracking-wider uppercase px-6 py-3.5 rounded transition-all">
+              Present Troop Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Activities -->
+  <section class="py-24 bg-surface">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+        <div>
+          <h2 class="text-headline-lg font-bold text-primary mb-2">Recent Activities</h2>
+          <p class="text-body-lg text-secondary">See what the 16th Colombo Scout Group has been up to lately.</p>
+        </div>
+        <a href="{{ url('photo-gallery') }}" 
+           class="inline-flex items-center gap-2 text-primary hover:text-tertiary font-bold text-sm tracking-wider uppercase transition-colors">
+          View Photo Gallery
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Activity 1 -->
+        <article class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col group shadow-sm hover:shadow-md transition-all duration-300">
+          <div class="h-52 overflow-hidden relative">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                 alt="Mount Baldy Summit Hike" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuANSxw24CvT31aOJLUMhWHmo90QbwGPxVT5-yf-MvxkhbDSDsaLeCklN5uZv-HsDoejgyK9Lf211yDRT8RLeBFhnc0y7lf9wKJ6TTEgA6Lt2DrkZBQFjBu9i5_7mxR2ZPYWfKRzDF12e275DMduHeDpqUcvtTui4S5YQsdcXpWPKSa20HI8GAWA1L_jLw15cpdPRzyXQHgk8lE36JVrOWS5lsMXLkmLTxmfnAQlnOXXfhyHF8Kjs2mMx8W1Dr2aDxKbiFlQOaSYFfp9"/>
+            <div class="absolute top-4 left-4 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded">Expedition</div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="text-xs text-secondary mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">calendar_today</span>
+              Oct 12, 2025
+            </div>
+            <h3 class="text-title-lg font-bold text-primary mb-3">Mount Baldy Summit Hike</h3>
+            <p class="text-body-md text-secondary mb-6 flex-1 leading-relaxed">
+              A challenging 10-mile hike to the summit, testing scouts' physical endurance, group navigation, and outdoor survival teamwork.
+            </p>
+            <a class="text-primary hover:text-tertiary font-bold text-xs tracking-wider uppercase inline-flex items-center gap-1 w-fit transition-colors" href="{{ url('photo-gallery') }}">
+              View Details <span class="material-symbols-outlined text-sm">chevron_right</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Activity 2 -->
+        <article class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col group shadow-sm hover:shadow-md transition-all duration-300">
+          <div class="h-52 overflow-hidden relative">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                 alt="Pioneering Skills Bridge Building" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuyR3alUjs_cF3UjNsp8RWpnxbrmNhYzdYknLZ9UK3GeYYkX-WfylVq_F5d5WJx9GxgATQjz_F5M_IT9gtabM_chT1OwqsKhZwoX9d6eAhYrEEOMBT2ZBpj3-XEis_1tT4IlUAR5HdDtUZFc69X8WH2sNfLlliplFbrHjUE4VKiV8Fl1E9HgJ78MPQi5jmOFbnBPVgozmz35L_kgo5mOrFr5qlRGWVrdD6pQbJRPneI8ujCVemBC4fnixBldVNedbbSBQ7ZQur12YK"/>
+            <div class="absolute top-4 left-4 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded">Skills</div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="text-xs text-secondary mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">calendar_today</span>
+              Sep 28, 2025
+            </div>
+            <h3 class="text-title-lg font-bold text-primary mb-3">Pioneering Skills Weekend</h3>
+            <p class="text-body-md text-secondary mb-6 flex-1 leading-relaxed">
+              Applying advanced knots and lashings to design and erect a stable, functional rope bridge across the local creek.
+            </p>
+            <a class="text-primary hover:text-tertiary font-bold text-xs tracking-wider uppercase inline-flex items-center gap-1 w-fit transition-colors" href="{{ url('badgework-new-syllabus') }}">
+              View Syllabus <span class="material-symbols-outlined text-sm">chevron_right</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Activity 3 -->
+        <article class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col group shadow-sm hover:shadow-md transition-all duration-300">
+          <div class="h-52 overflow-hidden relative">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                 alt="Local Park Restoration Project" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuClkJa-eXrSRCQDwTifF-k3r-z7XmCEAWizhz49ciwfuvQ6U0tSg81FvuZqJO0sZdihX1ojtv-5JzvKopW2Xd6tcIvoEL4Fyyy0Uf7cnQkqQtooMH4gDBWwstsTVaKG8A_7wTvlPnOpFP-dtjufGT_ebL0yRoe6beeF-f5cNsfdnnNFKWK1iyZgpkg9ybF822g7Ddv8wT3ksUws7KkKN6EqpDEDXGLWTmG41SnDoBotD8TAVmLs74611Sjkt-G_VRYLAritpRNIFDz0"/>
+            <div class="absolute top-4 left-4 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded">Service</div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="text-xs text-secondary mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">calendar_today</span>
+              Sep 15, 2025
+            </div>
+            <h3 class="text-title-lg font-bold text-primary mb-3">Local Park Restoration</h3>
+            <p class="text-body-md text-secondary mb-6 flex-1 leading-relaxed">
+              Scouts cleared invasive growth and planted over 50 native trees, contributing to environmental conservation and park beauty.
+            </p>
+            <a class="text-primary hover:text-tertiary font-bold text-xs tracking-wider uppercase inline-flex items-center gap-1 w-fit transition-colors" href="{{ url('/contact') }}">
+              Get Involved <span class="material-symbols-outlined text-sm">chevron_right</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Vanilla JavaScript Word Rotator -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const words = ["Smart", "Courteous", "Obedient", "Useful", "Trustworthy"];
+    let index = 0;
+    const el = document.getElementById('rotator-text');
+    setInterval(() => {
+      index = (index + 1) % words.length;
+      el.classList.add('opacity-0', 'scale-95');
+      setTimeout(() => {
+        el.textContent = words[index];
+        el.classList.remove('opacity-0', 'scale-95');
+      }, 250);
+    }, 2000);
+  });
+</script>
 @endsection

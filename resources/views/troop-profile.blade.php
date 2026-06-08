@@ -232,49 +232,6 @@
                             </table>
 
                             <br>
-                            <h4 class="font-weight-semi-bold text-center">Eagle Patrol</h4>
-
-                            <table class="table">
-
-                                <tbody>
-                                    <tr style="text-align: center;">
-                                        <td>
-                                            <b>Patrol Leader</b>
-                                        </td>
-                                        <td>
-                                            S. Sanjit
-                                        </td>
-
-                                    </tr>
-                                    <tr style="text-align: center;">
-                                        <td>
-                                            <b>Asst. Patrol Leader</b>
-                                        </td>
-                                        <td>
-                                            S. Thalakumbura
-                                        </td>
-
-                                    </tr>
-                                    <tr style="text-align: center;">
-                                        <td>
-                                            <b>Junior Scout</b>
-                                        </td>
-                                        <td>
-                                            B.A.N.S. Merari </td>
-                                    </tr>
-                                    <tr style="text-align: center;">
-                                        <td>
-                                            <b>Junior Scout</b>
-                                        </td>
-                                        <td>
-                                            C.M. SuriyaBandara </td>
-                                    </tr>
-
-
-                                </tbody>
-                            </table>
-
-                            <br>
                             <h4 class="font-weight-semi-bold text-center">Leopard Patrol</h4>
 
                             <table class="table">
