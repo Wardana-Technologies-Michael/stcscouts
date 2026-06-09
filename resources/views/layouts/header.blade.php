@@ -24,174 +24,56 @@
           The Troop
           <span class="material-symbols-outlined text-sm font-bold transition-transform duration-300 group-hover:rotate-180 rotate-on-hover inline-block">keyboard_arrow_down</span>
         </button>
-        <div class="absolute left-0 top-full w-60 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/5 hidden group-hover:block nav-dropdown z-50 py-1.5">
-          <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('troop-profile') }}">Present Troop Profile</a>
-          <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('instructors') }}">Instructors</a>
-          <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('the-group-committee') }}">The Group Committee</a>
-          
-          <!-- The Evolution Submenu -->
-          <div class="relative group/sub nav-group">
-            <button class="w-full text-left px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5 flex justify-between items-center focus:outline-none">
-              The Evolution
-              <span class="material-symbols-outlined text-sm font-bold">keyboard_arrow_right</span>
-            </button>
-            <div class="absolute left-full top-0 w-60 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/5 hidden group-hover/sub:block nav-dropdown z-50 py-1.5">
-              <!-- Descriptive History Submenu -->
-              <div class="relative group/subsub nav-group">
-                <button class="w-full text-left px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5 flex justify-between items-center focus:outline-none">
-                  Descriptive History
-                  <span class="material-symbols-outlined text-sm font-bold">keyboard_arrow_right</span>
-                </button>
-                <div class="absolute left-full top-0 w-60 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/5 hidden group-hover/subsub:block nav-dropdown z-50 py-1.5">
-                  <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('history-of-scouting-at-college') }}">The Beginnings: 1912-1948</a>
-                  <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('history-of-scouting-at-college-2') }}">Post-war Scouting: 1948-1968</a>
-                  <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('history-of-scouting-at-college-3') }}">The Recent Times: 1968-Present</a>
-                  
-                  <!-- Men of Honour -->
-                  <div class="relative group/subsubsub nav-group">
-                    <button class="w-full text-left px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5 flex justify-between items-center focus:outline-none">
-                      Men of Honour
-                      <span class="material-symbols-outlined text-sm font-bold">keyboard_arrow_right</span>
-                    </button>
-                    <div class="absolute left-full top-0 w-60 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/5 hidden group-hover/subsubsub:block nav-dropdown z-50 py-1.5">
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('mr-w-i-muttiah') }}">Mr. W.I. Muttiah</a>
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('mr-rex-jayasinha') }}">Mr. Rex Jayasingha</a>
-                    </div>
-                  </div>
-                </div>
+        <div class="absolute left-[-180px] top-full w-[880px] bg-surface border border-outline-variant/60 rounded-2xl shadow-xl shadow-primary/10 hidden group-hover:block nav-dropdown z-50 p-6">
+          <div class="grid grid-cols-4 gap-6">
+            <!-- Column 1: Present Troop -->
+            <div>
+              <h5 class="text-xs font-bold text-primary uppercase tracking-wider mb-3 pb-1.5 border-b border-outline-variant/30">The Troop</h5>
+              <div class="flex flex-col gap-1">
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('troop-profile') }}">Present Troop Profile</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('instructors') }}">Instructors</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('the-group-committee') }}">The Group Committee</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('the-scout-dunk') }}">Request the Scout Dunk</a>
               </div>
+            </div>
 
-              <!-- Recent Year Reports Submenu -->
-              <div class="relative group/subyear nav-group">
-                <button class="w-full text-left px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5 flex justify-between items-center focus:outline-none">
-                  Recent Year Reports
-                  <span class="material-symbols-outlined text-sm font-bold">keyboard_arrow_right</span>
-                </button>
-                <div class="absolute left-full top-0 w-60 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/5 hidden group-hover/subyear:block nav-dropdown z-50 py-1.5">
-                  <!-- 1995-1999 -->
-                  <div class="relative group/subyear1 nav-group">
-                    <button class="w-full text-left px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5 flex justify-between items-center focus:outline-none">
-                      1995-1999
-                      <span class="material-symbols-outlined text-sm font-bold">keyboard_arrow_right</span>
-                    </button>
-                    <div class="absolute left-full top-0 w-64 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/5 hidden group-hover/subyear1:block nav-dropdown z-50 py-1.5">
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md">1995</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/2nd-asia-pacific-6th-new-zealand-venture-scout-camp-1995') }}">Asia Pacific Scout Camp '95</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-1995') }}">Year Report – 1995</a>
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md mt-1">1996</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/17th-Asia-Pacific-Scout-Jamboree-1996') }}">17th AP Scout Jamboree</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/Tidal-Wave-1996') }}">Tidal Wave – 1996</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-1996') }}">Year Report – 1996</a>
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md mt-1">1997</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/18th-Asia-Pacific-Scout-Jamboree-1997') }}">18th AP Scout Jamboree</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/Coastal-Winds–1997') }}">Coastal Winds – 1997</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-1997') }}">Year Report – 1997</a>
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md mt-1">1998</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/Sand-Storm–1998') }}">Sand Storm – 1998</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-1998') }}">Year Report – 1998</a>
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md mt-1">1999</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/Sweden-National-Jamboree-’99') }}">Sweden Jamboree '99</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/De-Ja-‘Vu–1999') }}">De Ja 'Vu – 1999</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/Thai-National-Jamboree-’99') }}">Thai Jamboree '99</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-1999') }}">Year Report – 1999</a>
-                    </div>
-                  </div>
-
-                  <!-- 2000-2004 -->
-                  <div class="relative group/subyear2 nav-group">
-                    <button class="w-full text-left px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5 flex justify-between items-center focus:outline-none">
-                      2000-2004
-                      <span class="material-symbols-outlined text-sm font-bold">keyboard_arrow_right</span>
-                    </button>
-                    <div class="absolute left-full top-0 w-60 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/5 hidden group-hover/subyear2:block nav-dropdown z-50 py-1.5">
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md">2000</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/Cyclone-2000') }}">Cyclone 2000</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-2000') }}">Year Report – 2000</a>
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md mt-1">2001</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-2001') }}">Year Report – 2001</a>
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md mt-1">2002</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/Tribe-Out-2002') }}">Tribe Out 2002</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-2002') }}">Year Report – 2002</a>
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md mt-1">2003</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-2003') }}">Year Report – 2003</a>
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md mt-1">2004</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/tribal-craft-2004') }}">Tribal Craft 2004</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-2004') }}">Year Report – 2004</a>
-                    </div>
-                  </div>
-
-                  <!-- 2005-2009 -->
-                  <div class="relative group/subyear3 nav-group">
-                    <button class="w-full text-left px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5 flex justify-between items-center focus:outline-none">
-                      2005-2009
-                      <span class="material-symbols-outlined text-sm font-bold">keyboard_arrow_right</span>
-                    </button>
-                    <div class="absolute left-full top-0 w-60 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/5 hidden group-hover/subyear3:block nav-dropdown z-50 py-1.5">
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2005') }}">Year Report – 2005</a>
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2006') }}">Year Report – 2006</a>
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2007') }}">Year Report – 2007</a>
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2008') }}">Year Report – 2008</a>
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2009') }}">Year Report – 2009</a>
-                    </div>
-                  </div>
-
-                  <!-- 2010-2014 -->
-                  <div class="relative group/subyear4 nav-group">
-                    <button class="w-full text-left px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5 flex justify-between items-center focus:outline-none">
-                      2010-2014
-                      <span class="material-symbols-outlined text-sm font-bold">keyboard_arrow_right</span>
-                    </button>
-                    <div class="absolute left-full top-0 w-60 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/5 hidden group-hover/subyear4:block nav-dropdown z-50 py-1.5">
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2010') }}">Year Report – 2010</a>
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2011') }}">Year Report – 2011</a>
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md mt-1">2012</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/Centennial-Flames-2012') }}">Centennial Flames</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/International-Achievement') }}">Intl. Achievement</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-2012') }}">Year Report – 2012</a>
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5 mt-1" href="{{ url('/year-report-2013') }}">Year Report – 2013</a>
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2014') }}">Year Report – 2014</a>
-                    </div>
-                  </div>
-
-                  <!-- 2015-2019 -->
-                  <div class="relative group/subyear5 nav-group">
-                    <button class="w-full text-left px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5 flex justify-between items-center focus:outline-none">
-                      2015-2019
-                      <span class="material-symbols-outlined text-sm font-bold">keyboard_arrow_right</span>
-                    </button>
-                    <div class="absolute left-full top-0 w-60 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/5 hidden group-hover/subyear5:block nav-dropdown z-50 py-1.5">
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2015') }}">Year Report – 2015</a>
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2016') }}">Year Report – 2016</a>
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2017') }}">Year Report – 2017</a>
-                      <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/year-report-2018') }}">Year Report – 2018</a>
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md mt-1">2019</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/Escapade-2019') }}">Escapade 2019</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/year-report-2019') }}">Year Report – 2019</a>
-                    </div>
-                  </div>
-
-                  <!-- 2020-2024 -->
-                  <div class="relative group/subyear6 nav-group">
-                    <button class="w-full text-left px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5 flex justify-between items-center focus:outline-none">
-                      2020-2024
-                      <span class="material-symbols-outlined text-sm font-bold">keyboard_arrow_right</span>
-                    </button>
-                    <div class="absolute left-full top-0 w-60 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/5 hidden group-hover/subyear6:block nav-dropdown z-50 py-1.5">
-                      <a class="block px-4 py-1 text-xs text-primary font-bold bg-surface-container-low mx-1.5 rounded-md">2020</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/ESCAPADE=At-Home-“Kids”') }}">ESCAPADE At Home "Kids"</a>
-                      <a class="block px-5 py-1.5 text-xs text-secondary hover:text-primary hover:bg-primary/5 rounded-md mx-1.5 transition-all" href="{{ url('/ONLINE-CAMP-FIRE') }}">ONLINE CAMP FIRE</a>
-                    </div>
-                  </div>
-                </div>
+            <!-- Column 2: The Evolution -->
+            <div>
+              <h5 class="text-xs font-bold text-primary uppercase tracking-wider mb-3 pb-1.5 border-b border-outline-variant/30">The Evolution</h5>
+              <div class="flex flex-col gap-1">
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('history-of-scouting-at-college') }}">The Beginnings: 1912-1948</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('history-of-scouting-at-college-2') }}">Post-war Scouting: 1948-1968</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('history-of-scouting-at-college-3') }}">The Recent Times: 1968-Present</a>
+                <div class="h-[1px] bg-outline-variant/30 my-1 mx-2.5"></div>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('mr-w-i-muttiah') }}">Mr. W.I. Muttiah</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('mr-rex-jayasinha') }}">Mr. Rex Jayasingha</a>
+                <div class="h-[1px] bg-outline-variant/30 my-1 mx-2.5"></div>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/Past-Troop-Leaders') }}">Past Troop Leaders</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/King’s-and-Queen’s-Scouts') }}">King's & Queen's Scouts</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/President’s-Award-Winners') }}">President's Award Winners</a>
               </div>
+            </div>
 
-              <!-- Extra Evolution Pages -->
-              <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/Past-Troop-Leaders') }}">Past Troop Leaders</a>
-              <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/King’s-and-Queen’s-Scouts') }}">King's & Queen's Scouts</a>
-              <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('/President’s-Award-Winners') }}">President's Award Winners</a>
+            <!-- Column 3: Year Reports 1995-2009 -->
+            <div>
+              <h5 class="text-xs font-bold text-primary uppercase tracking-wider mb-3 pb-1.5 border-b border-outline-variant/30">Reports (1995-2009)</h5>
+              <div class="flex flex-col gap-1">
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=1995-1999') }}">1995 - 1999 Reports</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2000-2004') }}">2000 - 2004 Reports</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2005-2009') }}">2005 - 2009 Reports</a>
+              </div>
+            </div>
+
+            <!-- Column 4: Year Reports 2010-2024 -->
+            <div>
+              <h5 class="text-xs font-bold text-primary uppercase tracking-wider mb-3 pb-1.5 border-b border-outline-variant/30">Reports (2010-2024)</h5>
+              <div class="flex flex-col gap-1">
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2010-2014') }}">2010 - 2014 Reports</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2015-2019') }}">2015 - 2019 Reports</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2020-2024') }}">2020 - 2024 Reports</a>
+              </div>
             </div>
           </div>
-          <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5" href="{{ url('the-scout-dunk') }}">Request the Scout Dunk</a>
         </div>
       </div>
 
@@ -286,6 +168,7 @@
             <a class="text-sm text-secondary hover:text-primary py-1 block" href="{{ url('troop-profile') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Present Troop Profile</a>
             <a class="text-sm text-secondary hover:text-primary py-1 block" href="{{ url('instructors') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Instructors</a>
             <a class="text-sm text-secondary hover:text-primary py-1 block" href="{{ url('the-group-committee') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">The Group Committee</a>
+            <a class="text-sm text-secondary hover:text-primary py-1 block" href="{{ url('recent-year-reports') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Recent Year Reports</a>
             
             <div>
               <button onclick="document.getElementById('mob-evol').classList.toggle('hidden')" class="w-full text-left text-sm text-secondary hover:text-primary py-1 flex justify-between items-center focus:outline-none">

@@ -297,6 +297,10 @@ Route::get('/President’s-Award-Winners', function () {
     return view('Recent_Year_Reports/President’s-Award-Winners');
 });
 
+Route::get('/recent-year-reports', function () {
+    return view('recent-year-reports');
+});
+
 
 
 
