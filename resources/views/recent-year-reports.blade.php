@@ -8,8 +8,10 @@
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style:none; scrollbar-width:none; }
 
-        /* ── Tab bar ──────────────────────────────────────────────── */
-        .ryr-tab {
+        /* ── Jump-nav buttons ─────────────────────────────────────── */
+        .ryr-tab,
+        .ryr-tab:link,
+        .ryr-tab:visited {
             flex-shrink: 0;
             padding: 8px 18px;
             border-radius: 8px;
@@ -21,15 +23,31 @@
             white-space: nowrap;
             border: none;
             background: transparent;
+            text-decoration: none;
+            display: inline-block;
         }
         .ryr-tab:hover {
             color: #000a1e;
             background: rgba(0,10,30,0.06);
         }
-        .ryr-tab.active {
+        .ryr-tab.active,
+        .ryr-tab.active:link,
+        .ryr-tab.active:visited {
             background: #000a1e;
             color: #fff;
             box-shadow: 0 2px 10px rgba(0,10,30,0.22);
+        }
+
+        /* ── Scroll offset so sticky bar doesn't cover the heading ── */
+        .ryr-section {
+            scroll-margin-top: 88px; /* nav (64px) + jump-bar (≈40px) + breathing room */
+        }
+
+        /* ── Era divider ──────────────────────────────────────────── */
+        .ryr-era-divider {
+            border: none;
+            border-top: 1.5px solid rgba(0,10,30,0.07);
+            margin: 56px 0 0 0;
         }
 
         /* ── Timeline layout ──────────────────────────────────────── */
@@ -156,7 +174,10 @@
 
         /* ── Range header ─────────────────────────────────────────── */
         .ryr-range-header {
-            padding: 2px 0 36px 0;
+            padding: 40px 0 36px 0;
+        }
+        .ryr-range-header:first-child {
+            padding-top: 0;
         }
         .ryr-range-label {
             font-size: 28px;
@@ -181,14 +202,21 @@
             margin-bottom: 12px;
         }
 
-        /* ── Fade in animation ────────────────────────────────────── */
+        /* ── Fade-in on scroll ────────────────────────────────────── */
         @keyframes ryrFadeUp {
-            from { opacity: 0; transform: translateY(12px); }
+            from { opacity: 0; transform: translateY(14px); }
             to   { opacity: 1; transform: translateY(0); }
         }
-        .tab-panel:not(.hidden) {
-            animation: ryrFadeUp 0.3s ease forwards;
+        .ryr-section {
+            animation: ryrFadeUp 0.4s ease both;
         }
+        /* Stagger each section slightly */
+        .ryr-section:nth-child(1) { animation-delay: 0.05s; }
+        .ryr-section:nth-child(2) { animation-delay: 0.10s; }
+        .ryr-section:nth-child(3) { animation-delay: 0.15s; }
+        .ryr-section:nth-child(4) { animation-delay: 0.20s; }
+        .ryr-section:nth-child(5) { animation-delay: 0.25s; }
+        .ryr-section:nth-child(6) { animation-delay: 0.30s; }
     </style>
 
     {{-- ═══════════════════════════════ HERO SECTION ═══════════════════════════════════════ --}}
@@ -240,12 +268,12 @@
         </div>
     </div>
 
-    {{-- ═══════════════════════════════ STICKY TAB BAR ══════════════════════════════════════ --}}
-    <div class="sticky top-16 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.06)]">
+    {{-- ═══════════════════════════════ STICKY JUMP-NAV ═══════════════════════════════════════ --}}
+    <div id="ryr-jumpnav" class="sticky top-16 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.06)]">
         <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="flex items-center overflow-x-auto scrollbar-hide gap-1 py-3">
                 @foreach (['1995-1999','2000-2004','2005-2009','2010-2014','2015-2019','2020-2024'] as $r)
-                    <button id="btn-{{ $r }}" onclick="switchTab('{{ $r }}')" class="ryr-tab">{{ $r }}</button>
+                    <a id="btn-{{ $r }}" href="#section-{{ $r }}" class="ryr-tab" onclick="smoothJump(event,'section-{{ $r }}')">{{ $r }}</a>
                 @endforeach
             </div>
         </div>
@@ -255,10 +283,10 @@
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-14">
 
         {{-- ─────────────────────────────────────────────────────────────
-             PANEL: 1995–1999
+             SECTION: 1995–1999
         ──────────────────────────────────────────────────────────────── --}}
-        <div id="panel-1995-1999" class="tab-panel hidden">
-            <div class="ryr-range-header">
+        <div id="section-1995-1999" class="ryr-section">
+            <div class="ryr-range-header" style="padding-top:0;">
                 <span class="ryr-range-rule"></span>
                 <div class="ryr-range-label">1995 – 1999</div>
                 <p class="ryr-range-desc">The founding era — Asia-Pacific jamborees, pioneering expeditions, and the troop's first major international presence.</p>
@@ -340,7 +368,7 @@
                     </div>
                 </div>
 
-                {{-- 1999 (last) --}}
+                {{-- 1999 (last in era) --}}
                 <div class="ryr-entry ryr-last">
                     <div class="ryr-node">
                         <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
@@ -366,10 +394,12 @@
             </div>
         </div>
 
+        <hr class="ryr-era-divider">
+
         {{-- ─────────────────────────────────────────────────────────────
-             PANEL: 2000–2004
+             SECTION: 2000–2004
         ──────────────────────────────────────────────────────────────── --}}
-        <div id="panel-2000-2004" class="tab-panel hidden">
+        <div id="section-2000-2004" class="ryr-section">
             <div class="ryr-range-header">
                 <span class="ryr-range-rule"></span>
                 <div class="ryr-range-label">2000 – 2004</div>
@@ -440,7 +470,7 @@
                     </div>
                 </div>
 
-                {{-- 2004 (last) --}}
+                {{-- 2004 (last in era) --}}
                 <div class="ryr-entry ryr-last">
                     <div class="ryr-node">
                         <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
@@ -460,10 +490,12 @@
             </div>
         </div>
 
+        <hr class="ryr-era-divider">
+
         {{-- ─────────────────────────────────────────────────────────────
-             PANEL: 2005–2009
+             SECTION: 2005–2009
         ──────────────────────────────────────────────────────────────── --}}
-        <div id="panel-2005-2009" class="tab-panel hidden">
+        <div id="section-2005-2009" class="ryr-section">
             <div class="ryr-range-header">
                 <span class="ryr-range-rule"></span>
                 <div class="ryr-range-label">2005 – 2009</div>
@@ -503,10 +535,12 @@
             </div>
         </div>
 
+        <hr class="ryr-era-divider">
+
         {{-- ─────────────────────────────────────────────────────────────
-             PANEL: 2010–2014
+             SECTION: 2010–2014
         ──────────────────────────────────────────────────────────────── --}}
-        <div id="panel-2010-2014" class="tab-panel hidden">
+        <div id="section-2010-2014" class="ryr-section">
             <div class="ryr-range-header">
                 <span class="ryr-range-rule"></span>
                 <div class="ryr-range-label">2010 – 2014</div>
@@ -570,10 +604,12 @@
             </div>
         </div>
 
+        <hr class="ryr-era-divider">
+
         {{-- ─────────────────────────────────────────────────────────────
-             PANEL: 2015–2019
+             SECTION: 2015–2019
         ──────────────────────────────────────────────────────────────── --}}
-        <div id="panel-2015-2019" class="tab-panel hidden">
+        <div id="section-2015-2019" class="ryr-section">
             <div class="ryr-range-header">
                 <span class="ryr-range-rule"></span>
                 <div class="ryr-range-label">2015 – 2019</div>
@@ -597,7 +633,7 @@
                 </div>
                 @endforeach
 
-                {{-- 2019 (last) --}}
+                {{-- 2019 (last in era) --}}
                 <div class="ryr-entry ryr-last">
                     <div class="ryr-node">
                         <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
@@ -617,10 +653,12 @@
             </div>
         </div>
 
+        <hr class="ryr-era-divider">
+
         {{-- ─────────────────────────────────────────────────────────────
-             PANEL: 2020–2024
+             SECTION: 2020–2024
         ──────────────────────────────────────────────────────────────── --}}
-        <div id="panel-2020-2024" class="tab-panel hidden">
+        <div id="section-2020-2024" class="ryr-section">
             <div class="ryr-range-header">
                 <span class="ryr-range-rule"></span>
                 <div class="ryr-range-label">2020 – 2024</div>
@@ -637,7 +675,7 @@
                         <div class="ryr-count-label">2 entries</div>
                     </div>
                     <div class="ryr-chips">
-                        <a href="{{ url('/ESCAPADE=At-Home-"Kids"') }}" class="ryr-chip ryr-chip-event">
+                        <a href="{{ url('/ESCAPADE=At-Home-\"Kids\"') }}" class="ryr-chip ryr-chip-event">
                             <span class="material-symbols-outlined chip-ico">home_work</span>ESCAPADE At Home "Kids"
                         </a>
                         <a href="{{ url('/ONLINE-CAMP-FIRE') }}" class="ryr-chip ryr-chip-event">
@@ -653,31 +691,62 @@
 
     {{-- ═══════════════════════════════ JAVASCRIPT ══════════════════════════════════════════ --}}
     <script>
-        const VALID_RANGES = ['1995-1999','2000-2004','2005-2009','2010-2014','2015-2019','2020-2024'];
+        const RANGES = ['1995-1999','2000-2004','2005-2009','2010-2014','2015-2019','2020-2024'];
+        const JUMP_NAV_HEIGHT = () => document.getElementById('ryr-jumpnav').offsetHeight + 64; // nav bar + jump bar
 
-        function switchTab(rangeId) {
-            // Hide all panels, deactivate all tabs
-            document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
-            document.querySelectorAll('.ryr-tab').forEach(b => b.classList.remove('active'));
-
-            // Activate selected
-            const panel = document.getElementById('panel-' + rangeId);
-            const btn   = document.getElementById('btn-' + rangeId);
-            if (panel) panel.classList.remove('hidden');
-            if (btn)   btn.classList.add('active');
-
-            // Sync URL without reload
-            const url = new URL(window.location);
-            url.searchParams.set('range', rangeId);
-            window.history.replaceState({}, '', url);
+        /* ── Smooth-scroll with offset for sticky bars ─────────────── */
+        function smoothJump(e, sectionId) {
+            e.preventDefault();
+            const el = document.getElementById(sectionId);
+            if (!el) return;
+            const top = el.getBoundingClientRect().top + window.scrollY - JUMP_NAV_HEIGHT() - 12;
+            window.scrollTo({ top, behavior: 'smooth' });
         }
 
+        /* ── Highlight active tab based on scroll position ──────────── */
+        function updateActiveTab() {
+            let activeRange = RANGES[0];
+            const offset = JUMP_NAV_HEIGHT() + 20;
+
+            for (const r of RANGES) {
+                const el = document.getElementById('section-' + r);
+                if (!el) continue;
+                if (el.getBoundingClientRect().top <= offset) {
+                    activeRange = r;
+                }
+            }
+
+            RANGES.forEach(r => {
+                const btn = document.getElementById('btn-' + r);
+                if (btn) btn.classList.toggle('active', r === activeRange);
+            });
+        }
+
+        /* ── On load: jump to ?range= if present in URL ─────────────── */
         document.addEventListener('DOMContentLoaded', function () {
             const params = new URLSearchParams(window.location.search);
-            let range = params.get('range');
-            if (!range || !VALID_RANGES.includes(range)) range = '2020-2024';
-            switchTab(range);
+            const range  = params.get('range');
+            if (range && RANGES.includes(range)) {
+                // Wait one frame for layout to settle, then jump
+                requestAnimationFrame(() => {
+                    const el = document.getElementById('section-' + range);
+                    if (el) {
+                        const top = el.getBoundingClientRect().top + window.scrollY - JUMP_NAV_HEIGHT() - 12;
+                        window.scrollTo({ top, behavior: 'instant' });
+                    }
+                });
+            }
+            updateActiveTab();
         });
+
+        /* Throttled scroll listener */
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => { updateActiveTab(); ticking = false; });
+                ticking = true;
+            }
+        }, { passive: true });
     </script>
 
 @endsection

@@ -36,8 +36,8 @@
 
                 <h3 class="font-weight-bold text-4 mb-3 text-color-primary">THE TROOP</h3>
                 <ul class="list list-icons list-icons-sm mb-4">
+                    <li><a href="/troop"><i class="far fa-file"></i> The Troop Overview</a></li>
                     <li><a href="/troop-profile"><i class="far fa-file"></i> Present Troop Profile</a></li>
-                    <li><a href="/instructors"><i class="far fa-file"></i> Instructors</a></li>
                     <li><a href="/the-group-committee"><i class="far fa-file"></i> Sponsoring Authority & Committee</a></li>
                     <li><a href="/Past-Troop-Leaders"><i class="far fa-file"></i> Past Troop Leaders</a></li>
                     <li><a href="/King’s-and-Queen’s-Scouts"><i class="far fa-file"></i> King's & Queen's Scouts</a></li>

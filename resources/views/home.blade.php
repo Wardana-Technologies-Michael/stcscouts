@@ -27,8 +27,8 @@
            class="inline-flex justify-center items-center bg-surface text-primary font-bold text-sm tracking-wider uppercase px-8 py-4 rounded border border-transparent hover:bg-surface-container transition-all shadow-sm w-full sm:w-auto">
           Join Our Troop
         </a>
-        <a href="{{ url('/about-the-site') }}" 
-           class="inline-flex justify-center items-center border border-surface text-surface hover:bg-white/10 font-bold text-sm tracking-wider uppercase px-8 py-4 rounded transition-all w-full sm:w-auto">
+        <a href="{{ url('/troop') }}" 
+           class="inline-flex justify-center items-center border border-surface text-surface hover:bg-black hover:border-black font-bold text-sm tracking-wider uppercase px-8 py-4 rounded transition-all w-full sm:w-auto">
           About Us
         </a>
       </div>

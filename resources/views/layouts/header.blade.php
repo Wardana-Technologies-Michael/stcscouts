@@ -24,14 +24,14 @@
           The Troop
           <span class="material-symbols-outlined text-sm font-bold transition-transform duration-300 group-hover:rotate-180 rotate-on-hover inline-block">keyboard_arrow_down</span>
         </button>
-        <div class="absolute left-[-180px] top-full w-[880px] bg-surface border border-outline-variant/60 rounded-2xl shadow-xl shadow-primary/10 hidden group-hover:block nav-dropdown z-50 p-6">
-          <div class="grid grid-cols-4 gap-6">
+        <div class="absolute left-[-120px] top-full w-[720px] bg-surface border border-outline-variant/60 rounded-2xl shadow-xl shadow-primary/10 hidden group-hover:block nav-dropdown z-50 p-6">
+          <div class="grid grid-cols-3 gap-6">
             <!-- Column 1: Present Troop -->
             <div>
               <h5 class="text-xs font-bold text-primary uppercase tracking-wider mb-3 pb-1.5 border-b border-outline-variant/30">The Troop</h5>
               <div class="flex flex-col gap-1">
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('troop') }}">The Troop Overview</a>
                 <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('troop-profile') }}">Present Troop Profile</a>
-                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('instructors') }}">Instructors</a>
                 <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('the-group-committee') }}">The Group Committee</a>
                 <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('the-scout-dunk') }}">Request the Scout Dunk</a>
               </div>
@@ -49,28 +49,25 @@
                 <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('mr-rex-jayasinha') }}">Mr. Rex Jayasingha</a>
                 <div class="h-[1px] bg-outline-variant/30 my-1 mx-2.5"></div>
                 <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/Past-Troop-Leaders') }}">Past Troop Leaders</a>
-                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/King’s-and-Queen’s-Scouts') }}">King's & Queen's Scouts</a>
-                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/President’s-Award-Winners') }}">President's Award Winners</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/King\'s-and-Queen\'s-Scouts') }}">King's & Queen's Scouts</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/President\'s-Award-Winners') }}">President's Award Winners</a>
               </div>
             </div>
 
-            <!-- Column 3: Year Reports 1995-2009 -->
+            <!-- Column 3: Year Reports (all ranges) -->
             <div>
-              <h5 class="text-xs font-bold text-primary uppercase tracking-wider mb-3 pb-1.5 border-b border-outline-variant/30">Reports (1995-2009)</h5>
+              <h5 class="text-xs font-bold text-primary uppercase tracking-wider mb-3 pb-1.5 border-b border-outline-variant/30">Year Reports</h5>
               <div class="flex flex-col gap-1">
-                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=1995-1999') }}">1995 - 1999 Reports</a>
-                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2000-2004') }}">2000 - 2004 Reports</a>
-                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2005-2009') }}">2005 - 2009 Reports</a>
-              </div>
-            </div>
-
-            <!-- Column 4: Year Reports 2010-2024 -->
-            <div>
-              <h5 class="text-xs font-bold text-primary uppercase tracking-wider mb-3 pb-1.5 border-b border-outline-variant/30">Reports (2010-2024)</h5>
-              <div class="flex flex-col gap-1">
-                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2010-2014') }}">2010 - 2014 Reports</a>
-                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2015-2019') }}">2015 - 2019 Reports</a>
-                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2020-2024') }}">2020 - 2024 Reports</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=1995-1999') }}">1995 – 1999 Reports</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2000-2004') }}">2000 – 2004 Reports</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2005-2009') }}">2005 – 2009 Reports</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2010-2014') }}">2010 – 2014 Reports</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2015-2019') }}">2015 – 2019 Reports</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2020-2024') }}">2020 – 2024 Reports</a>
+                <div class="h-[1px] bg-outline-variant/30 my-1 mx-2.5"></div>
+                <a class="block text-sm font-semibold text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all flex items-center gap-1" href="{{ url('/recent-year-reports') }}">
+                  <span class="material-symbols-outlined text-sm">open_in_new</span>View All Reports
+                </a>
               </div>
             </div>
           </div>
@@ -101,8 +98,7 @@
         </div>
       </div>
 
-      <!-- About the Site -->
-      <a class="text-secondary hover:text-primary font-semibold text-xs xl:text-sm px-2 xl:px-3 py-1.5 rounded-lg hover:bg-primary/5 transition-all duration-300 whitespace-nowrap" href="{{ url('/about-the-site') }}">About the Site</a>
+
 
       <!-- Badge Work -->
       <div class="relative group nav-group h-full flex items-center">
@@ -165,11 +161,11 @@
             <span class="material-symbols-outlined text-base">keyboard_arrow_down</span>
           </button>
           <div id="mob-troop" class="hidden pl-4 mt-2 flex flex-col gap-2 border-l border-outline-variant">
+            <a class="text-sm text-secondary hover:text-primary py-1 block" href="{{ url('troop') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">The Troop Overview</a>
             <a class="text-sm text-secondary hover:text-primary py-1 block" href="{{ url('troop-profile') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Present Troop Profile</a>
-            <a class="text-sm text-secondary hover:text-primary py-1 block" href="{{ url('instructors') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Instructors</a>
             <a class="text-sm text-secondary hover:text-primary py-1 block" href="{{ url('the-group-committee') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">The Group Committee</a>
-            <a class="text-sm text-secondary hover:text-primary py-1 block" href="{{ url('recent-year-reports') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Recent Year Reports</a>
             
+            <!-- Collapsible The Evolution -->
             <div>
               <button onclick="document.getElementById('mob-evol').classList.toggle('hidden')" class="w-full text-left text-sm text-secondary hover:text-primary py-1 flex justify-between items-center focus:outline-none">
                 The Evolution
@@ -182,8 +178,25 @@
                 <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('mr-w-i-muttiah') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Mr. W.I. Muttiah</a>
                 <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('mr-rex-jayasinha') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Mr. Rex Jayasingha</a>
                 <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/Past-Troop-Leaders') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Past Leaders</a>
-                <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/King’s-and-Queen’s-Scouts') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">King's & Queen's Scouts</a>
-                <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/President’s-Award-Winners') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">President's Award Winners</a>
+                <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/King\'s-and-Queen\'s-Scouts') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">King's & Queen's Scouts</a>
+                <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/President\'s-Award-Winners') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">President's Award Winners</a>
+              </div>
+            </div>
+
+            <!-- Collapsible Year Reports -->
+            <div>
+              <button onclick="document.getElementById('mob-reports').classList.toggle('hidden')" class="w-full text-left text-sm text-secondary hover:text-primary py-1 flex justify-between items-center focus:outline-none">
+                Year Reports
+                <span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+              </button>
+              <div id="mob-reports" class="hidden pl-4 mt-1 flex flex-col gap-1 border-l border-outline-variant">
+                <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/recent-year-reports?range=1995-1999') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">1995 – 1999 Reports</a>
+                <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/recent-year-reports?range=2000-2004') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">2000 – 2004 Reports</a>
+                <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/recent-year-reports?range=2005-2009') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">2005 – 2009 Reports</a>
+                <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/recent-year-reports?range=2010-2014') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">2010 – 2014 Reports</a>
+                <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/recent-year-reports?range=2015-2019') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">2015 – 2019 Reports</a>
+                <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/recent-year-reports?range=2020-2024') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">2020 – 2024 Reports</a>
+                <a class="text-xs font-semibold text-primary py-1 block" href="{{ url('/recent-year-reports') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">View All Reports →</a>
               </div>
             </div>
             
@@ -215,7 +228,7 @@
           </div>
         </div>
 
-        <a class="text-secondary hover:text-primary font-semibold text-base transition-colors" href="{{ url('/about-the-site') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">About the Site</a>
+
 
         <!-- Collapsible Badge Work -->
         <div>

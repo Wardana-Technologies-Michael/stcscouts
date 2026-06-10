@@ -45,6 +45,10 @@ Route::get('/troop-profile', function () {
     return view('troop-profile');
 });
 
+Route::get('/troop', function () {
+    return view('troop');
+});
+
 Route::get('/photo-gallery', function () {
     return view('photo-gallery');
 });
@@ -53,9 +57,6 @@ Route::get('/badgework-new-syllabus', function () {
     return view('badgework-new-syllabus');
 });
 
-Route::get('/instructors', function () {
-    return view('instructors');
-});
 
 Route::get('/the-group-committee', function () {
     return view('the-group-committee');
