@@ -9,16 +9,19 @@
     :root {
         --kl-navy:   #000a1e;
         --kl-blue:   #002147;
-        --kl-gold:   #c9a84c;
-        --kl-gold-l: #f0d080;
-        --kl-card:   #0d1524;
-        --kl-border: rgba(255,255,255,0.09);
+        --kl-blue-accent: #0e4194;
+        --kl-blue-accent-l: #0a337a;
+        --kl-card:   #ffffff;
+        --kl-border: rgba(0, 10, 30, 0.08);
+        --kl-bg:     #fcf9f8;
+        --kl-text:   #1c1b1b;
+        --kl-muted:  #50606f;
     }
 
     /* ───── Page wrapper ─────────────────────────────────────────────────── */
     .kl-wrap {
-        background-color: #080f1c;
-        color: #e8edf4;
+        background-color: var(--kl-bg);
+        color: var(--kl-text);
         font-family: 'Plus Jakarta Sans', sans-serif;
         overflow-x: hidden;
     }
@@ -28,13 +31,13 @@
         position: relative;
         padding: 96px 0 80px;
         background: linear-gradient(160deg, #000a1e 0%, #001533 55%, #0a2040 100%);
-        border-bottom: 1px solid rgba(201,168,76,0.25);
+        border-bottom: 1px solid rgba(14, 65, 148, 0.25);
         overflow: hidden;
     }
     .kl-hero::before {
         content: '';
         position: absolute; inset: 0;
-        background-image: radial-gradient(circle at 25% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+        background-image: radial-gradient(circle at 25% 50%, rgba(14, 65, 148, 0.08) 0%, transparent 60%),
                           radial-gradient(circle at 75% 20%, rgba(0,33,71,0.6) 0%, transparent 55%);
         pointer-events: none;
     }
@@ -59,15 +62,15 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: rgba(201,168,76,0.12);
-        border: 1px solid rgba(201,168,76,0.3);
+        background: rgba(174, 199, 246, 0.12);
+        border: 1px solid rgba(174, 199, 246, 0.3);
         border-radius: 9999px;
         padding: 6px 18px;
         font-size: 11px;
         font-weight: 700;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--kl-gold);
+        color: #aec7f6;
         margin-bottom: 24px;
     }
     .kl-hero h1 {
@@ -78,7 +81,7 @@
         color: #fff;
         margin-bottom: 8px;
     }
-    .kl-hero h1 span { color: var(--kl-gold); }
+    .kl-hero h1 span { color: #aec7f6; }
     .kl-hero-sub {
         font-size: 1rem;
         color: rgba(255,255,255,0.5);
@@ -96,7 +99,7 @@
     }
     .kl-cd-card {
         background: rgba(255,255,255,0.06);
-        border: 1px solid var(--kl-border);
+        border: 1px solid rgba(255,255,255,0.12);
         border-radius: 14px;
         width: 90px;
         padding: 14px 8px;
@@ -104,12 +107,12 @@
         backdrop-filter: blur(12px);
         transition: border-color 0.25s;
     }
-    .kl-cd-card:hover { border-color: rgba(201,168,76,0.4); }
+    .kl-cd-card:hover { border-color: rgba(174, 199, 246, 0.4); }
     .kl-cd-val {
         display: block;
         font-size: 2rem;
         font-weight: 800;
-        color: var(--kl-gold);
+        color: #aec7f6;
         line-height: 1.15;
         letter-spacing: -0.02em;
     }
@@ -131,7 +134,7 @@
     }
     .kl-stat-badge {
         background: rgba(255,255,255,0.07);
-        border: 1px solid var(--kl-border);
+        border: 1px solid rgba(255,255,255,0.12);
         border-radius: 12px;
         padding: 14px 20px;
         text-align: center;
@@ -143,11 +146,11 @@
     /* ───── Section system ───────────────────────────────────────────────── */
     .kl-section {
         padding: 80px 0;
-        background: #080f1c;
+        background: var(--kl-bg);
     }
     .kl-section-alt {
         padding: 80px 0;
-        background: #060c18;
+        background: #f0edec;
     }
     .kl-inner {
         max-width: 1200px;
@@ -167,31 +170,31 @@
         font-weight: 700;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--kl-gold);
+        color: var(--kl-blue-accent-l);
         margin-bottom: 10px;
     }
     .kl-section-title {
         font-size: clamp(1.6rem, 3vw, 2.2rem);
         font-weight: 800;
-        color: #fff;
+        color: var(--kl-navy);
         letter-spacing: -0.025em;
         line-height: 1.15;
         margin-bottom: 12px;
     }
     .kl-section-desc {
         font-size: 0.95rem;
-        color: rgba(255,255,255,0.45);
+        color: var(--kl-muted);
         line-height: 1.7;
         max-width: 600px;
     }
     .kl-section-hd.centered .kl-section-desc { margin: 0 auto; }
 
-    /* Gold rule */
+    /* Blue rule */
     .kl-rule {
         display: block;
         width: 36px;
         height: 3px;
-        background: var(--kl-gold);
+        background: var(--kl-blue-accent);
         border-radius: 99px;
         margin-bottom: 14px;
     }
@@ -212,33 +215,34 @@
         position: relative;
         overflow: hidden;
         transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        box-shadow: 0 4px 20px rgba(0,10,30,0.02);
     }
     .kl-cont-card::before {
         content: '';
         position: absolute;
         top: 0; left: 0; right: 0;
         height: 3px;
-        background: rgba(255,255,255,0.1);
+        background: rgba(0, 10, 30, 0.05);
     }
     .kl-cont-card.host::before {
-        background: linear-gradient(90deg, var(--kl-blue), var(--kl-gold));
+        background: linear-gradient(90deg, var(--kl-blue), var(--kl-blue-accent));
     }
     .kl-cont-card:hover {
         transform: translateY(-6px);
-        border-color: rgba(201,168,76,0.25);
-        box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+        border-color: rgba(14, 65, 148, 0.25);
+        box-shadow: 0 16px 40px rgba(0,10,30,0.08);
     }
     .kl-cont-school {
         font-size: 1rem;
         font-weight: 700;
-        color: #fff;
+        color: var(--kl-navy);
         margin-bottom: 8px;
         line-height: 1.3;
     }
     .kl-cont-count {
         font-size: 2.8rem;
         font-weight: 800;
-        color: var(--kl-gold);
+        color: var(--kl-blue-accent-l);
         line-height: 1;
         margin: 14px 0;
         letter-spacing: -0.03em;
@@ -246,8 +250,8 @@
     .kl-cont-badge {
         display: inline-block;
         font-size: 0.78rem;
-        color: rgba(255,255,255,0.45);
-        background: rgba(0,0,0,0.25);
+        color: var(--kl-muted);
+        background: rgba(0, 10, 30, 0.05);
         padding: 4px 12px;
         border-radius: 6px;
         font-weight: 500;
@@ -259,12 +263,12 @@
         border: 1px solid var(--kl-border);
         border-radius: 20px;
         padding: 18px;
-        box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+        box-shadow: 0 12px 40px rgba(0,10,30,0.04);
     }
     .kl-map-img-wrap {
         border-radius: 12px;
         overflow: hidden;
-        border: 1px solid rgba(255,255,255,0.07);
+        border: 1px solid rgba(0,10,30,0.06);
     }
     .kl-map-img-wrap img {
         width: 100%;
@@ -282,14 +286,15 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        background: rgba(0,0,0,0.2);
+        background: #ffffff;
         padding: 10px 14px;
         border-radius: 10px;
+        border: 1.5px solid var(--kl-border);
         border-left: 3px solid;
     }
     .kl-legend-text {
         font-size: 0.85rem;
-        color: rgba(255,255,255,0.75);
+        color: var(--kl-text);
         font-weight: 500;
         line-height: 1.3;
     }
@@ -305,8 +310,8 @@
         padding: 10px 26px;
         border-radius: 9999px;
         border: 1.5px solid var(--kl-border);
-        background: rgba(255,255,255,0.04);
-        color: rgba(255,255,255,0.5);
+        background: #ffffff;
+        color: var(--kl-muted);
         font-family: 'Plus Jakarta Sans', sans-serif;
         font-size: 14px;
         font-weight: 600;
@@ -314,14 +319,15 @@
         transition: all 0.25s ease;
     }
     .kl-day-btn:hover:not(.active) {
-        border-color: rgba(201,168,76,0.4);
-        color: #fff;
+        border-color: var(--kl-navy);
+        color: var(--kl-navy);
+        background: rgba(0,10,30,0.02);
     }
     .kl-day-btn.active {
-        background: var(--kl-gold);
-        border-color: var(--kl-gold);
-        color: #080f1c;
-        box-shadow: 0 4px 18px rgba(201,168,76,0.35);
+        background: var(--kl-navy);
+        border-color: var(--kl-navy);
+        color: #ffffff;
+        box-shadow: 0 4px 18px rgba(0,10,30,0.15);
     }
 
     /* Schedule table */
@@ -347,38 +353,38 @@
         border-collapse: collapse;
     }
     .kl-table thead th {
-        background: rgba(201,168,76,0.12);
-        color: var(--kl-gold);
+        background: rgba(0, 10, 30, 0.04);
+        color: var(--kl-navy);
         font-size: 11px;
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
         padding: 14px 20px;
         text-align: left;
-        border-bottom: 1px solid rgba(201,168,76,0.2);
+        border-bottom: 1px solid var(--kl-border);
     }
     .kl-table tbody tr {
-        border-bottom: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid var(--kl-border);
         transition: background 0.2s;
     }
     .kl-table tbody tr:last-child { border-bottom: none; }
-    .kl-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+    .kl-table tbody tr:hover { background: rgba(0, 10, 30, 0.015); }
     .kl-table tbody td {
         padding: 16px 20px;
         vertical-align: middle;
         font-size: 14px;
-        color: rgba(255,255,255,0.75);
+        color: var(--kl-text);
         line-height: 1.45;
     }
     .kl-td-time {
         font-weight: 700;
-        color: var(--kl-gold);
+        color: var(--kl-blue-accent-l);
         white-space: nowrap;
         font-size: 13px;
         letter-spacing: 0.02em;
     }
     .kl-td-event {
-        color: #e8edf4;
+        color: var(--kl-navy);
         font-weight: 600;
         font-size: 14px;
     }
@@ -391,35 +397,35 @@
         display: inline-flex;
         align-items: center;
         gap: 5px;
-        background: rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(0, 10, 30, 0.04);
+        border: 1px solid rgba(0, 10, 30, 0.08);
         border-radius: 9999px;
         padding: 3px 11px 3px 8px;
         font-size: 12px;
         font-weight: 600;
-        color: rgba(255,255,255,0.7);
+        color: var(--kl-navy);
         white-space: nowrap;
     }
     .kl-person-chip .kl-chip-dot {
         width: 6px; height: 6px;
         border-radius: 50%;
-        background: var(--kl-gold);
+        background: var(--kl-blue-accent-l);
         flex-shrink: 0;
     }
     .kl-td-notes {
         font-size: 12.5px;
-        color: rgba(255,255,255,0.38);
+        color: var(--kl-muted);
         font-style: italic;
     }
 
     /* Milestone row highlight */
-    .kl-row-milestone td { background: rgba(201,168,76,0.06); }
-    .kl-row-milestone .kl-td-event { color: var(--kl-gold-l); }
+    .kl-row-milestone td { background: rgba(14, 65, 148, 0.06); }
+    .kl-row-milestone .kl-td-event { color: var(--kl-blue-accent-l); }
 
     /* Responsive table */
     @media (max-width: 640px) {
         .kl-table thead { display: none; }
-        .kl-table tbody tr { display: block; padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .kl-table tbody tr { display: block; padding: 14px 16px; border-bottom: 1px solid var(--kl-border); }
         .kl-table tbody td { display: block; padding: 3px 0; border: none; }
         .kl-td-time { font-size: 12px; margin-bottom: 4px; }
         .kl-td-event { margin-bottom: 6px; }
@@ -427,7 +433,7 @@
 
     /* ───── Trainer Spotlight ────────────────────────────────────────────── */
     .kl-spotlight {
-        background: linear-gradient(135deg, rgba(13,21,36,0.95) 0%, rgba(6,12,24,0.95) 100%);
+        background: #ffffff;
         border: 1px solid var(--kl-border);
         border-radius: 22px;
         padding: 40px;
@@ -435,55 +441,56 @@
         gap: 32px;
         align-items: center;
         flex-direction: column;
+        box-shadow: 0 8px 30px rgba(0,10,30,0.04);
     }
     @media (min-width: 768px) { .kl-spotlight { flex-direction: row; } }
     .kl-spotlight-avatar {
         width: 130px; height: 130px;
         border-radius: 50%;
-        border: 3px solid var(--kl-gold);
-        background: #1a2840;
+        border: 3px solid var(--kl-blue-accent-l);
+        background: rgba(0, 10, 30, 0.03);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 2.8rem;
-        color: var(--kl-gold);
+        color: var(--kl-blue-accent-l);
         flex-shrink: 0;
-        box-shadow: 0 0 0 6px rgba(201,168,76,0.12);
+        box-shadow: 0 0 0 6px rgba(14, 65, 148, 0.08);
     }
     .kl-spotlight-name {
-        font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 4px;
+        font-size: 1.5rem; font-weight: 800; color: var(--kl-navy); margin-bottom: 4px;
     }
     .kl-spotlight-role {
         font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
-        text-transform: uppercase; color: var(--kl-gold); margin-bottom: 14px;
+        text-transform: uppercase; color: var(--kl-blue-accent-l); margin-bottom: 14px;
     }
     .kl-spotlight-bio {
-        font-size: 0.93rem; color: rgba(255,255,255,0.5); line-height: 1.7;
+        font-size: 0.93rem; color: var(--kl-muted); line-height: 1.7;
     }
 
     /* ───── Safety Card ──────────────────────────────────────────────────── */
     .kl-safety {
-        background: linear-gradient(135deg, rgba(185,28,28,0.12) 0%, rgba(127,29,29,0.05) 100%);
-        border: 1px solid rgba(239,68,68,0.25);
+        background: rgba(185, 28, 28, 0.04);
+        border: 1px solid rgba(185, 28, 28, 0.15);
         border-radius: 22px;
         padding: 36px;
     }
     .kl-safety-title {
-        font-size: 1.1rem; font-weight: 800; color: #f87171;
+        font-size: 1.1rem; font-weight: 800; color: #b91c1c;
         display: flex; align-items: center; gap: 10px; margin-bottom: 22px;
     }
     .kl-safety ul { list-style: none; padding: 0; margin: 0; }
     .kl-safety ul li {
         position: relative; padding-left: 24px;
         margin-bottom: 16px; font-size: 0.9rem;
-        color: rgba(255,255,255,0.7); line-height: 1.6;
+        color: var(--kl-text); line-height: 1.6;
     }
     .kl-safety ul li::before {
         content: '';
         position: absolute; left: 0; top: 8px;
         width: 8px; height: 8px;
         border-radius: 50%;
-        background: #f87171;
+        background: #b91c1c;
     }
 
     /* ───── Download Cards ───────────────────────────────────────────────── */
@@ -502,21 +509,21 @@
     }
     .kl-dl-card:hover {
         transform: translateY(-5px);
-        border-color: rgba(25,135,84,0.4);
-        box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+        border-color: var(--kl-navy);
+        box-shadow: 0 12px 32px rgba(0,10,30,0.06);
     }
     .kl-dl-ico {
-        font-size: 2.2rem; color: var(--kl-gold); margin-bottom: 18px;
+        font-size: 2.2rem; color: var(--kl-blue-accent-l); margin-bottom: 18px;
     }
     .kl-dl-title {
-        font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px;
+        font-size: 1rem; font-weight: 700; color: var(--kl-navy); margin-bottom: 8px;
     }
     .kl-dl-desc {
-        font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.6; flex-grow: 1; margin-bottom: 20px;
+        font-size: 0.85rem; color: var(--kl-muted); line-height: 1.6; flex-grow: 1; margin-bottom: 20px;
     }
     .kl-dl-btn {
         display: inline-flex; align-items: center; gap: 8px;
-        background: #0f5132; border: none; color: #fff;
+        background: var(--kl-navy); border: none; color: #fff;
         font-family: 'Plus Jakarta Sans', sans-serif;
         font-size: 13px; font-weight: 700;
         padding: 10px 18px; border-radius: 9px;
@@ -524,19 +531,20 @@
         align-self: flex-start;
     }
     .kl-dl-btn:hover {
-        background: #198754; color: #fff;
-        box-shadow: 0 4px 14px rgba(25,135,84,0.35);
+        background: var(--kl-blue); color: #fff;
+        box-shadow: 0 4px 14px rgba(0,10,30,0.15);
     }
 
     /* ───── Sponsor Card ─────────────────────────────────────────────────── */
     .kl-sponsor {
         background: #fff;
+        border: 1px solid var(--kl-border);
         border-radius: 20px;
         padding: 40px;
         text-align: center;
         max-width: 540px;
         margin: 48px auto 0;
-        box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        box-shadow: 0 12px 40px rgba(0,10,30,0.04);
     }
     .kl-sponsor-label {
         font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
@@ -669,8 +677,8 @@
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <h3 style="color:#fff; font-weight:700; font-size:1.2rem; margin-bottom:12px;">Zoning Details</h3>
-                    <p style="color:rgba(255,255,255,0.45); font-size:0.9rem; line-height:1.7; margin-bottom:24px;">To accommodate up to 800 participants safely, the STC Mount Lavinia Grounds and Sports Complex have been structured into distinct zones. Specific arrivals will proceed to their allocated camping sectors or boarding blocks.</p>
+                    <h3 style="color:var(--kl-navy); font-weight:700; font-size:1.2rem; margin-bottom:12px;">Zoning Details</h3>
+                    <p style="color:var(--kl-muted); font-size:0.9rem; line-height:1.7; margin-bottom:24px;">To accommodate up to 800 participants safely, the STC Mount Lavinia Grounds and Sports Complex have been structured into distinct zones. Specific arrivals will proceed to their allocated camping sectors or boarding blocks.</p>
                     <div class="kl-legend">
                         <div class="kl-legend-item" style="border-color:#3b82f6;">
                             <span class="kl-legend-text"><strong>Zone A:</strong> STC ML Host Camping Area</span>
@@ -1030,9 +1038,9 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="kl-section-hd" style="margin-bottom:28px;">
-                        <span class="kl-rule" style="background:#f87171;"></span>
-                        <span class="kl-section-label" style="color:#f87171;">Important</span>
-                        <h2 class="kl-section-title" style="font-size:1.6rem; color:#f87171;">Campfire Safety & Rules</h2>
+                        <span class="kl-rule" style="background:#b91c1c;"></span>
+                        <span class="kl-section-label" style="color:#b91c1c;">Important</span>
+                        <h2 class="kl-section-title" style="font-size:1.6rem; color:#b91c1c;">Campfire Safety & Rules</h2>
                     </div>
                     <div class="kl-safety">
                         <div class="kl-safety-title">
