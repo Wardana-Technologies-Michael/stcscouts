@@ -532,6 +532,9 @@
                 </div>
                 <p class="text-secondary text-sm md:text-base leading-relaxed max-w-xl">
                     The administrative support body that handles the financial, planning, and advisory roles for the Group.
+                    <a href="{{ url('the-group-committee') }}" class="text-primary font-bold hover:underline inline-flex items-center gap-1.5 ml-1">
+                        View Full Committee & Roster <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                    </a>
                 </p>
             </div>
 
@@ -541,12 +544,14 @@
                     <div class="tp-section-title">Sponsoring Authority &amp; Office Bearers</div>
                     <div class="flex flex-col gap-1">
                         @foreach ([
-                            ['Sponsoring Authority (Warden)',       'Rev. Mark Billmoria'],
-                            ['Sponsoring Authority (Sub Warden)',   'Mr. Asanka Perera'],
+                            ['Sponsoring Authority (Warden)',       'Mr. Asanka Perera'],
+                            ['Sponsoring Authority (Sub Warden)',   'Dr. Radeeka Mendis'],
+                            ['Group Adviser',                       'Mr. Nanda Fernando'],
                             ['Group Chairman',                      'Mr. Senaka De Fonseka'],
-                            ['Group Secretary',                     'Mr. S. C. Gajanayaka'],
-                            ['Group Treasurer',                     'Dr. Aseni Wickramathilake'],
-                            ['Group Scout Leader',                  'Mrs. Wathsala Wijewickrema'],
+                            ['Group Secretary',                     'Mr. Dananjaya Peter'],
+                            ['Group Treasurer',                     'Ms. Shiara Perera'],
+                            ['Asst. Group Treasurer',               'Ms. Shalini Rubasinghe'],
+                            ['Group Scout Leader (GSL)',            'Ms. Wathsala Wijewickrama'],
                         ] as [$office, $name])
                         <div class="flex justify-between items-center py-2 border-b border-outline-variant/35 last:border-0 text-sm">
                             <span class="font-semibold text-primary">{{ $office }}</span>
@@ -559,18 +564,21 @@
                 <!-- Committee Members -->
                 <div class="tp-card flex flex-col gap-4">
                     <div class="tp-section-title">Committee Members</div>
-                    <div class="flex flex-col gap-0.5 max-h-[260px] overflow-y-auto pr-2">
+                    <div class="flex flex-col gap-0.5 max-h-[360px] overflow-y-auto pr-2">
                         @foreach ([
-                            'Mrs. Anoma Jayasundera',
-                            'Mr. Wirendra Wannakuwatta',
-                            'Mrs. Angeeka De Silva',
-                            'Mrs. Anusha Hettiararachchi Hettigoda',
-                            'Mr. Harin De Mel',
-                            'Mr. Nandana Liyanagamage',
-                            'Mr. V. R. Ramanayake',
-                            'Mrs. Ama Alagiyawanna',
-                            'Mr. Milindu Malawarachchi',
-                            'Mr. Nirodha Dias'
+                            'Ms. Kishani Tennakoon',
+                            'Ms. Anoma Jayasundera',
+                            'Ms. Dinushi Suriyaarachchi',
+                            'Ms. Suwani Thamanegama',
+                            'Mr. Mahesh Karunaratne',
+                            'Mr. Chatura Kulathilaka',
+                            'Mr. Milindu Mallawaratchie',
+                            'Mr. Nirodha Dias',
+                            'Mr. Pasan Perera',
+                            'Mr. Jayanga Perera',
+                            'Mr. Harinda Fonseka',
+                            'Mr. Shamil Shiraz',
+                            'Mr. Ganesh Neelaghandan',
                         ] as $m)
                         <div class="flex items-center gap-2 py-1.5 text-sm text-secondary">
                             <span class="w-1.5 h-1.5 bg-primary/45 rounded-full shrink-0"></span>

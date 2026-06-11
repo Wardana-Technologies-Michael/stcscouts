@@ -10,27 +10,44 @@
            src="{{ asset('images/front_slide.jpg') }}"/>
       <div class="absolute inset-0 bg-primary/65 backdrop-blur-[2px]"></div>
     </div>
-    <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center text-on-primary">
-      <h1 class="text-display font-display font-bold text-on-primary mb-stack-md max-w-4xl mx-auto tracking-tight drop-shadow-md leading-tight">
-        Prepared. For Life.
-      </h1>
-      <div class="relative max-w-3xl mx-auto mb-stack-lg px-8 py-6">
-        <!-- Soft Feathered Dark Vignette (No Sharp Edges) -->
-        <div class="absolute inset-x-4 inset-y-2 z-0 bg-primary/95 rounded-full filter blur-2xl pointer-events-none"></div>
-        <!-- Text Layer -->
-        <p class="relative z-10 text-body-lg font-normal text-white leading-relaxed mb-0" style="text-shadow: 0 1px 4px rgba(0,0,0,0.8), 0 0 6px rgba(0,0,0,0.4);">
-          The Official Web Portal of the 16th Colombo Scout Group of S. Thomas' College, Mount Lavinia. Combines knowledge with fun to build character and foster citizenship.
-        </p>
+    <div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex items-center justify-between gap-6">
+      <!-- Left Logo -->
+      <div class="hidden lg:block w-28 xl:w-36 shrink-0 select-none pointer-events-none animate-[tpFadeUp_0.6s_ease_both]">
+        <img class="w-full h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)]" 
+             alt="S. Thomas' College Crest" 
+             src="{{ asset('images/stc_crest_clean.png') }}"/>
       </div>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="{{ url('/contact') }}" 
-           class="inline-flex justify-center items-center bg-surface text-primary font-bold text-sm tracking-wider uppercase px-8 py-4 rounded border border-transparent hover:bg-surface-container transition-all shadow-sm w-full sm:w-auto">
-          Join Our Troop
-        </a>
-        <a href="{{ url('/troop') }}" 
-           class="inline-flex justify-center items-center border border-surface text-surface hover:bg-black hover:border-black font-bold text-sm tracking-wider uppercase px-8 py-4 rounded transition-all w-full sm:w-auto">
-          About Us
-        </a>
+
+      <!-- Center Content -->
+      <div class="flex-1 text-center text-on-primary">
+        <h1 class="text-display font-display font-bold text-on-primary mb-stack-md max-w-4xl mx-auto tracking-tight drop-shadow-md leading-tight">
+          Prepared. For Life.
+        </h1>
+        <div class="relative max-w-3xl mx-auto mb-stack-lg px-8 py-6">
+          <!-- Soft Feathered Dark Vignette (No Sharp Edges) -->
+          <div class="absolute inset-x-4 inset-y-2 z-0 bg-primary/95 rounded-full filter blur-2xl pointer-events-none"></div>
+          <!-- Text Layer -->
+          <p class="relative z-10 text-body-lg font-normal text-white leading-relaxed mb-0" style="text-shadow: 0 1px 4px rgba(0,0,0,0.8), 0 0 6px rgba(0,0,0,0.4);">
+            The Official Web Portal of the 16th Colombo Scout Group of S. Thomas' College, Mount Lavinia. Combines knowledge with fun to build character and foster citizenship.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="{{ url('/contact') }}" 
+             class="inline-flex justify-center items-center bg-surface text-primary font-bold text-sm tracking-wider uppercase px-8 py-4 rounded border border-transparent hover:bg-surface-container transition-all shadow-sm w-full sm:w-auto">
+            Join Our Troop
+          </a>
+          <a href="{{ url('/troop') }}" 
+             class="inline-flex justify-center items-center border border-surface text-surface hover:bg-black hover:border-black font-bold text-sm tracking-wider uppercase px-8 py-4 rounded transition-all w-full sm:w-auto">
+            About Us
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Logo -->
+      <div class="hidden lg:block w-28 xl:w-36 shrink-0 select-none pointer-events-none animate-[tpFadeUp_0.6s_ease_both]">
+        <img class="w-full h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.4)]" 
+             alt="World Scout Emblem" 
+             src="{{ asset('images/world_scout_clean.png') }}"/>
       </div>
     </div>
   </section>
