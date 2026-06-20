@@ -256,11 +256,11 @@
                 {{-- Stats badges --}}
                 <div class="flex gap-3 flex-shrink-0">
                     <div class="bg-white/[0.08] backdrop-blur-sm border border-white/[0.1] rounded-2xl px-5 py-4 text-center">
-                        <div class="text-3xl font-extrabold text-white leading-none">26</div>
+                        <div class="text-3xl font-extrabold text-white leading-none">{{ $years }}</div>
                         <div class="text-[11px] text-white/45 mt-1.5 font-semibold tracking-wide uppercase">Years</div>
                     </div>
                     <div class="bg-white/[0.08] backdrop-blur-sm border border-white/[0.1] rounded-2xl px-5 py-4 text-center">
-                        <div class="text-3xl font-extrabold text-white leading-none">40+</div>
+                        <div class="text-3xl font-extrabold text-white leading-none">{{ $total }}</div>
                         <div class="text-[11px] text-white/45 mt-1.5 font-semibold tracking-wide uppercase">Documents</div>
                     </div>
                 </div>
@@ -272,7 +272,8 @@
     <div id="ryr-jumpnav" class="sticky top-16 z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.06)]">
         <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div class="flex items-center overflow-x-auto scrollbar-hide gap-1 py-3">
-                @foreach (['1995-1999','2000-2004','2005-2009','2010-2014','2015-2019','2020-2024'] as $r)
+                @foreach ($eras as $era)
+                    @php $r = $era['meta']['key']; @endphp
                     <a id="btn-{{ $r }}" href="#section-{{ $r }}" class="ryr-tab" onclick="smoothJump(event,'section-{{ $r }}')">{{ $r }}</a>
                 @endforeach
             </div>
@@ -282,410 +283,44 @@
     {{-- ═══════════════════════════════ CONTENT AREA ═══════════════════════════════════════ --}}
     <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-14">
 
-        {{-- ─────────────────────────────────────────────────────────────
-             SECTION: 1995–1999
-        ──────────────────────────────────────────────────────────────── --}}
-        <div id="section-1995-1999" class="ryr-section">
-            <div class="ryr-range-header" style="padding-top:0;">
-                <span class="ryr-range-rule"></span>
-                <div class="ryr-range-label">1995 – 1999</div>
-                <p class="ryr-range-desc">The founding era — Asia-Pacific jamborees, pioneering expeditions, and the troop's first major international presence.</p>
-            </div>
+        @forelse ($eras as $era)
+            @if (! $loop->first)
+                <hr class="ryr-era-divider">
+            @endif
 
-            <div class="ryr-timeline">
-
-                {{-- 1995 --}}
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">1995</div>
-                        <div class="ryr-count-label">2 entries</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/2nd-asia-pacific-6th-new-zealand-venture-scout-camp-1995') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">explore</span>Asia Pacific Scout Camp '95
-                        </a>
-                        <a href="{{ url('/year-report-1995') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 1995
-                        </a>
-                    </div>
+            <div id="section-{{ $era['meta']['key'] }}" class="ryr-section">
+                <div class="ryr-range-header" @if($loop->first) style="padding-top:0;" @endif>
+                    <span class="ryr-range-rule"></span>
+                    <div class="ryr-range-label">{{ $era['meta']['label'] }}</div>
+                    <p class="ryr-range-desc">{{ $era['meta']['desc'] }}</p>
                 </div>
 
-                {{-- 1996 --}}
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">1996</div>
-                        <div class="ryr-count-label">3 entries</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/17th-Asia-Pacific-Scout-Jamboree-1996') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">campaign</span>17th AP Scout Jamboree
-                        </a>
-                        <a href="{{ url('/Tidal-Wave-1996') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">water</span>Tidal Wave – 1996
-                        </a>
-                        <a href="{{ url('/year-report-1996') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 1996
-                        </a>
-                    </div>
-                </div>
-
-                {{-- 1997 --}}
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">1997</div>
-                        <div class="ryr-count-label">3 entries</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/18th-Asia-Pacific-Scout-Jamboree-1997') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">campaign</span>18th AP Scout Jamboree
-                        </a>
-                        <a href="{{ url('/Coastal-Winds–1997') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">air</span>Coastal Winds – 1997
-                        </a>
-                        <a href="{{ url('/year-report-1997') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 1997
-                        </a>
-                    </div>
-                </div>
-
-                {{-- 1998 --}}
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">1998</div>
-                        <div class="ryr-count-label">2 entries</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/Sand-Storm–1998') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">grain</span>Sand Storm – 1998
-                        </a>
-                        <a href="{{ url('/year-report-1998') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 1998
-                        </a>
-                    </div>
-                </div>
-
-                {{-- 1999 (last in era) --}}
-                <div class="ryr-entry ryr-last">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">1999</div>
-                        <div class="ryr-count-label">4 entries</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/Sweden-National-Jamboree-\'99') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">flag</span>Sweden National Jamboree '99
-                        </a>
-                        <a href="{{ url('/De-Ja-\'Vu–1999') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">history</span>De Ja 'Vu – 1999
-                        </a>
-                        <a href="{{ url('/Thai-National-Jamboree-\'99') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">forest</span>Thai National Jamboree '99
-                        </a>
-                        <a href="{{ url('/year-report-1999') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 1999
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <hr class="ryr-era-divider">
-
-        {{-- ─────────────────────────────────────────────────────────────
-             SECTION: 2000–2004
-        ──────────────────────────────────────────────────────────────── --}}
-        <div id="section-2000-2004" class="ryr-section">
-            <div class="ryr-range-header">
-                <span class="ryr-range-rule"></span>
-                <div class="ryr-range-label">2000 – 2004</div>
-                <p class="ryr-range-desc">The millennium era of tribal craft, cyclone expeditions, and continued troop growth through the new century.</p>
-            </div>
-
-            <div class="ryr-timeline">
-
-                {{-- 2000 --}}
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">2000</div>
-                        <div class="ryr-count-label">2 entries</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/Cyclone-2000') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">cyclone</span>Cyclone 2000
-                        </a>
-                        <a href="{{ url('/year-report-2000') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 2000
-                        </a>
-                    </div>
-                </div>
-
-                {{-- 2001 --}}
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">2001</div>
-                        <div class="ryr-count-label">1 entry</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/year-report-2001') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 2001
-                        </a>
-                    </div>
-                </div>
-
-                {{-- 2002 --}}
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">2002</div>
-                        <div class="ryr-count-label">2 entries</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/Tribe-Out-2002') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">groups</span>Tribe Out 2002
-                        </a>
-                        <a href="{{ url('/year-report-2002') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 2002
-                        </a>
-                    </div>
-                </div>
-
-                {{-- 2003 --}}
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">2003</div>
-                        <div class="ryr-count-label">1 entry</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/year-report-2003') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 2003
-                        </a>
-                    </div>
-                </div>
-
-                {{-- 2004 (last in era) --}}
-                <div class="ryr-entry ryr-last">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">2004</div>
-                        <div class="ryr-count-label">2 entries</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/tribal-craft-2004') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">handyman</span>Tribal Craft 2004
-                        </a>
-                        <a href="{{ url('/year-report-2004') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 2004
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <hr class="ryr-era-divider">
-
-        {{-- ─────────────────────────────────────────────────────────────
-             SECTION: 2005–2009
-        ──────────────────────────────────────────────────────────────── --}}
-        <div id="section-2005-2009" class="ryr-section">
-            <div class="ryr-range-header">
-                <span class="ryr-range-rule"></span>
-                <div class="ryr-range-label">2005 – 2009</div>
-                <p class="ryr-range-desc">Steady years of scouting dedication, training, and annual reporting through a formative decade.</p>
-            </div>
-
-            <div class="ryr-timeline">
-
-                @foreach ([2005, 2006, 2007, 2008] as $yr)
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">{{ $yr }}</div>
-                        <div class="ryr-count-label">1 entry</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/year-report-' . $yr) }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – {{ $yr }}
-                        </a>
-                    </div>
-                </div>
-                @endforeach
-
-                <div class="ryr-entry ryr-last">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">2009</div>
-                        <div class="ryr-count-label">1 entry</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/year-report-2009') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 2009
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <hr class="ryr-era-divider">
-
-        {{-- ─────────────────────────────────────────────────────────────
-             SECTION: 2010–2014
-        ──────────────────────────────────────────────────────────────── --}}
-        <div id="section-2010-2014" class="ryr-section">
-            <div class="ryr-range-header">
-                <span class="ryr-range-rule"></span>
-                <div class="ryr-range-label">2010 – 2014</div>
-                <p class="ryr-range-desc">The centennial decade — featuring the landmark Centennial Flames celebration in 2012 and international achievements.</p>
-            </div>
-
-            <div class="ryr-timeline">
-
-                @foreach ([2010, 2011] as $yr)
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">{{ $yr }}</div>
-                        <div class="ryr-count-label">1 entry</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/year-report-' . $yr) }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – {{ $yr }}
-                        </a>
-                    </div>
-                </div>
-                @endforeach
-
-                {{-- 2012 — landmark year --}}
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot" style="background: linear-gradient(135deg, #0e4194, #000a1e);">
-                            <span class="material-symbols-outlined ryr-dot-icon">star</span>
+                <div class="ryr-timeline">
+                    @php $yearLoopLast = $era['years']->keys()->last(); @endphp
+                    @foreach ($era['years'] as $year => $entries)
+                        <div class="ryr-entry {{ $year === $yearLoopLast ? 'ryr-last' : '' }}">
+                            <div class="ryr-node">
+                                <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
+                                <div class="ryr-year-num">{{ $year }}</div>
+                                <div class="ryr-count-label">{{ $entries->count() }} {{ \Illuminate\Support\Str::plural('entry', $entries->count()) }}</div>
+                            </div>
+                            <div class="ryr-chips">
+                                @foreach ($entries as $entry)
+                                    <a href="{{ url('/' . $entry->slug) }}"
+                                       class="ryr-chip {{ $entry->category === 'event' ? 'ryr-chip-event' : 'ryr-chip-report' }}">
+                                        <span class="material-symbols-outlined chip-ico">{{ $entry->icon }}</span>{{ $entry->chip_label_text }}
+                                    </a>
+                                @endforeach
+                            </div>
                         </div>
-                        <div class="ryr-year-num">2012</div>
-                        <div class="ryr-count-label">3 entries</div>
-                    </div>
-                    <div class="ryr-chips" style="border-left-color: rgba(14,65,148,0.18);">
-                        <a href="{{ url('/Centennial-Flames-2012') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">local_fire_department</span>Centennial Flames 2012
-                        </a>
-                        <a href="{{ url('/International-Achievement') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">public</span>International Achievement
-                        </a>
-                        <a href="{{ url('/year-report-2012') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 2012
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
-
-                @foreach ([2013, 2014] as $yr)
-                <div class="ryr-entry {{ $yr === 2014 ? 'ryr-last' : '' }}">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">{{ $yr }}</div>
-                        <div class="ryr-count-label">1 entry</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/year-report-' . $yr) }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – {{ $yr }}
-                        </a>
-                    </div>
-                </div>
-                @endforeach
-
             </div>
-        </div>
-
-        <hr class="ryr-era-divider">
-
-        {{-- ─────────────────────────────────────────────────────────────
-             SECTION: 2015–2019
-        ──────────────────────────────────────────────────────────────── --}}
-        <div id="section-2015-2019" class="ryr-section">
-            <div class="ryr-range-header">
-                <span class="ryr-range-rule"></span>
-                <div class="ryr-range-label">2015 – 2019</div>
-                <p class="ryr-range-desc">The Escapade years — a modern revival with fresh energy, signature events, and renewed scouting spirit.</p>
+        @empty
+            <div class="text-center py-20">
+                <p class="ryr-range-desc" style="margin:0 auto;">No reports have been published yet.</p>
             </div>
-
-            <div class="ryr-timeline">
-
-                @foreach ([2015, 2016, 2017, 2018] as $yr)
-                <div class="ryr-entry">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">{{ $yr }}</div>
-                        <div class="ryr-count-label">1 entry</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/year-report-' . $yr) }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – {{ $yr }}
-                        </a>
-                    </div>
-                </div>
-                @endforeach
-
-                {{-- 2019 (last in era) --}}
-                <div class="ryr-entry ryr-last">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">2019</div>
-                        <div class="ryr-count-label">2 entries</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/Escapade-2019') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">celebration</span>Escapade 2019
-                        </a>
-                        <a href="{{ url('/year-report-2019') }}" class="ryr-chip ryr-chip-report">
-                            <span class="material-symbols-outlined chip-ico">description</span>Year Report – 2019
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <hr class="ryr-era-divider">
-
-        {{-- ─────────────────────────────────────────────────────────────
-             SECTION: 2020–2024
-        ──────────────────────────────────────────────────────────────── --}}
-        <div id="section-2020-2024" class="ryr-section">
-            <div class="ryr-range-header">
-                <span class="ryr-range-rule"></span>
-                <div class="ryr-range-label">2020 – 2024</div>
-                <p class="ryr-range-desc">Scouting adapted — virtual events, at-home activities, and online camp fires kept the troop connected through unprecedented times.</p>
-            </div>
-
-            <div class="ryr-timeline">
-
-                {{-- 2020 (last) --}}
-                <div class="ryr-entry ryr-last">
-                    <div class="ryr-node">
-                        <div class="ryr-dot"><span class="material-symbols-outlined ryr-dot-icon">calendar_today</span></div>
-                        <div class="ryr-year-num">2020</div>
-                        <div class="ryr-count-label">2 entries</div>
-                    </div>
-                    <div class="ryr-chips">
-                        <a href="{{ url('/ESCAPADE=At-Home-\"Kids\"') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">home_work</span>ESCAPADE At Home "Kids"
-                        </a>
-                        <a href="{{ url('/ONLINE-CAMP-FIRE') }}" class="ryr-chip ryr-chip-event">
-                            <span class="material-symbols-outlined chip-ico">local_fire_department</span>Online Camp Fire
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+        @endforelse
 
     </div>
 

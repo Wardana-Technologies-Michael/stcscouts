@@ -64,6 +64,8 @@ class SitemapController extends Controller
         // Return the hrefs as JSON response
         //return response()->json($hrefs);
 
+        $urls = [];
+
         foreach ($hrefs as $route) {
             $urls[] = [
                 'loc' => url($route),
@@ -71,6 +73,20 @@ class SitemapController extends Controller
                 'priority' => '0.8'
             ];
         }
+
+        // Append every published database report so newly-added reports show up
+        // in the sitemap automatically (the static hrefs above only cover the
+        // reports that existed when the sitemap blade was written).
+        foreach (\App\Models\Report::where('published', true)->get() as $report) {
+            $urls[] = [
+                'loc' => url('/' . $report->slug),
+                'lastmod' => optional($report->updated_at)->toAtomString() ?: now()->toAtomString(),
+                'priority' => '0.7',
+            ];
+        }
+
+        // De-duplicate by URL (a migrated report may also be listed statically).
+        $urls = collect($urls)->unique('loc')->values()->all();
 
         $content = view('sitemap.xml', compact('urls'));
 //        $content = view('sitemap.xml', compact('urls'));

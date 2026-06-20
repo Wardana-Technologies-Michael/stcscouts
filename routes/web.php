@@ -2,16 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\ReportController as AdminReportController;
+use App\Http\Controllers\Admin\MediaController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
 
 Route::get('', function () {
@@ -19,7 +18,6 @@ Route::get('', function () {
 });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'generateXmlSitemap']);
-
 
 Route::get('/new', function () {
     return view('home');
@@ -57,7 +55,6 @@ Route::get('/badgework-new-syllabus', function () {
     return view('badgework-new-syllabus');
 });
 
-
 Route::get('/the-group-committee', function () {
     return view('the-group-committee');
 });
@@ -82,7 +79,6 @@ Route::get('/history-of-scouting-at-college', function () {
     return view('History/history-of-scouting-at-college');
 });
 
-
 Route::get('/history-of-scouting-at-college-2', function () {
     return view('History/history-of-scouting-at-college-2');
 });
@@ -90,8 +86,6 @@ Route::get('/history-of-scouting-at-college-2', function () {
 Route::get('/history-of-scouting-at-college-3', function () {
     return view('History/history-of-scouting-at-college-3');
 });
-
-
 
 Route::get('/history-of-the-16th-colombo-cub-pack', function () {
     return view('History/history-of-the-16th-colombo-cub-pack');
@@ -105,186 +99,11 @@ Route::get('/mr-rex-jayasinha', function () {
     return view('History/mr-rex-jayasinha');
 });
 
-Route::get('/2nd-asia-pacific-6th-new-zealand-venture-scout-camp-1995', function () {
-    return view('Recent_Year_Reports/1995/2nd-asia-pacific-6th-new-zealand-venture-scout-camp-1995');
-});
-
-Route::get('/year-report-1995', function () {
-    return view('Recent_Year_Reports/1995/year-report-1995');
-});
-
-
-Route::get('/17th-Asia-Pacific-Scout-Jamboree-1996', function () {
-    return view('Recent_Year_Reports/1996/17th-Asia-Pacific-Scout-Jamboree-1996');
-});
-
-Route::get('/Tidal-Wave-1996', function () {
-    return view('Recent_Year_Reports/1996/tidal-Wave-1996');
-});
-
-Route::get('/year-report-1996', function () {
-    return view('Recent_Year_Reports/1996/year-report-1996');
-});
-
-Route::get('/18th-Asia-Pacific-Scout-Jamboree-1997', function () {
-    return view('Recent_Year_Reports/1997/18th-Asia-Pacific-Scout-Jamboree-1997');
-});
-
-Route::get('/Coastal-Winds–1997', function () {
-    return view('Recent_Year_Reports/1997/Coastal-Winds–1997');
-});
-
-Route::get('/year-report-1997', function () {
-    return view('Recent_Year_Reports/1997/year-report-1997');
-});
-
-Route::get('/Sand-Storm–1998', function () {
-    return view('Recent_Year_Reports/1998/Sand-Storm–1998');
-});
-
-Route::get('/year-report-1998', function () {
-    return view('Recent_Year_Reports/1998/year-report-1998');
-});
-
-Route::get('/Sweden-National-Jamboree-’99', function () {
-    return view('Recent_Year_Reports/1999/Sweden-National-Jamboree-’99');
-});
-
-Route::get('/De-Ja-‘Vu–1999', function () {
-    return view('Recent_Year_Reports/1999/De-Ja-‘Vu–1999');
-});
-
-Route::get('/Thai-National-Jamboree-’99', function () {
-    return view('Recent_Year_Reports/1999/Thai-National-Jamboree-’99');
-});
-
-Route::get('/year-report-1999', function () {
-    return view('Recent_Year_Reports/1999/year-report-1999');
-});
-
-
-Route::get('/Cyclone-2000', function () {
-    return view('Recent_Year_Reports/2000/Cyclone-2000');
-});
-
-Route::get('/year-report-2000', function () {
-    return view('Recent_Year_Reports/2000/year-report-2000');
-});
-
-Route::get('/year-report-2001', function () {
-    return view('Recent_Year_Reports/2001/year-report-2001');
-});
-
-Route::get('/Tribe-Out-2002', function () {
-    return view('Recent_Year_Reports/2002/tribe-out-2002');
-});
-
-Route::get('/year-report-2002', function () {
-    return view('Recent_Year_Reports/2002/year-report-2002');
-});
-
-Route::get('/year-report-2003', function () {
-    return view('Recent_Year_Reports/2003/year-report-2003');
-});
-
-
-Route::get('/tribal-craft-2004', function () {
-    return view('Recent_Year_Reports/2004/tribal-craft-2004');
-});
-
-
-Route::get('/year-report-2004', function () {
-    return view('Recent_Year_Reports/2004/year-report-2004');
-});
-
-
-Route::get('/year-report-2005', function () {
-    return view('Recent_Year_Reports/2005/year-report-2005');
-});
-
-
-Route::get('/year-report-2006', function () {
-    return view('Recent_Year_Reports/2006/year-report-2006');
-});
-
-
-Route::get('/year-report-2007', function () {
-    return view('Recent_Year_Reports/2007/year-report-2007');
-});
-
-
-Route::get('/year-report-2008', function () {
-    return view('Recent_Year_Reports/2008/year-report-2008');
-});
-
-
-Route::get('/year-report-2009', function () {
-    return view('Recent_Year_Reports/2009/year-report-2009');
-});
-
-
-Route::get('/year-report-2010', function () {
-    return view('Recent_Year_Reports/2010/year-report-2010');
-});
-
-
-Route::get('/year-report-2011', function () {
-    return view('Recent_Year_Reports/2011/year-report-2011');
-});
-
-
-Route::get('/Centennial-Flames-2012', function () {
-    return view('Recent_Year_Reports/2012/centennial-flames-2012');
-});
-
-
-Route::get('/International-Achievement', function () {
-    return view('Recent_Year_Reports/2012/international-achievement');
-});
-
-Route::get('/year-report-2012', function () {
-    return view('Recent_Year_Reports/2012/year-report-2012');
-});
-
-Route::get('/year-report-2013', function () {
-    return view('Recent_Year_Reports/2013/year-report-2013');
-});
-
-Route::get('/year-report-2014', function () {
-    return view('Recent_Year_Reports/2014/year-report-2014');
-});
-
-Route::get('/year-report-2015', function () {
-    return view('Recent_Year_Reports/2015/year-report-2015');
-});
-
-Route::get('/year-report-2016', function () {
-    return view('Recent_Year_Reports/2016/year-report-2016');
-});
-
-Route::get('/year-report-2017', function () {
-    return view('Recent_Year_Reports/2017/year-report-2017');
-});
-
-Route::get('/year-report-2018', function () {
-    return view('Recent_Year_Reports/2018/year-report-2018');
-});
-
-Route::get('/Escapade-2019', function () {
-    return view('Recent_Year_Reports/2019/escapade-2019');
-});
-
-Route::get('/year-report-2019', function () {
-    return view('Recent_Year_Reports/2019/year-report-2019');
-});
-
-Route::get('/ESCAPADE=At-Home-“Kids”', function () {
-    return view('Recent_Year_Reports/2020/escapade-at-home-kids');
-});
-
-Route::get('/ONLINE-CAMP-FIRE', function () {
-    return view('Recent_Year_Reports/2020/ONLINE-CAMP-FIRE');
-});
+/*
+|--------------------------------------------------------------------------
+| Year Reports roster pages (static — not part of the editable timeline)
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/Past-Troop-Leaders', function () {
     return view('Recent_Year_Reports/Past-Troop-Leaders');
@@ -298,11 +117,43 @@ Route::get('/President’s-Award-Winners', function () {
     return view('Recent_Year_Reports/President’s-Award-Winners');
 });
 
-Route::get('/recent-year-reports', function () {
-    return view('recent-year-reports');
+/*
+|--------------------------------------------------------------------------
+| Year Reports — database-driven timeline + individual report pages
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/recent-year-reports', [ReportController::class, 'index']);
+
+/*
+|--------------------------------------------------------------------------
+| Admin (password-protected report management)
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/admin', fn () => redirect()->route('admin.reports.index'));
+
+Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('admin.login');
+Route::post('/admin/login', [AuthController::class, 'login'])->name('admin.login.attempt');
+Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
+
+Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/reports', [AdminReportController::class, 'index'])->name('reports.index');
+    Route::get('/reports/create', [AdminReportController::class, 'create'])->name('reports.create');
+    Route::post('/reports', [AdminReportController::class, 'store'])->name('reports.store');
+    Route::get('/reports/{report}/edit', [AdminReportController::class, 'edit'])->name('reports.edit');
+    Route::put('/reports/{report}', [AdminReportController::class, 'update'])->name('reports.update');
+    Route::delete('/reports/{report}', [AdminReportController::class, 'destroy'])->name('reports.destroy');
+
+    Route::post('/media', [MediaController::class, 'store'])->name('media.store');
 });
 
+/*
+|--------------------------------------------------------------------------
+| Catch-all: serve a database report by its slug. MUST stay last so it only
+| handles paths not matched by any static route above. Preserves every
+| original /year-report-YYYY and event URL.
+|--------------------------------------------------------------------------
+*/
 
-
-
-
+Route::get('/{slug}', [ReportController::class, 'show'])->where('slug', '[^/]+');

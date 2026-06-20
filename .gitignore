@@ -1,7 +1,20 @@
-/vendor/
+# NOTE: This is a PRIVATE repo. vendor/ and .env are intentionally committed
+# so the project runs after a plain `git clone` with no extra setup.
+
 node_modules/
 npm-debug.log
 yarn-error.log
+
+# Editor / tooling / local-only
+/.idea/
+/.claude/
+/.vscode/
+.DS_Store
+Thumbs.db
+
+# Throwaway static-HTML export (not part of the Laravel app) and scratch notes
+/dist/
+/plans/
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -16,11 +29,15 @@ public_html/storage
 public_html/hot
 
 storage/*.key
-.env
 Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
 
-/storage/framework/*
-/bootstrap/cache/*.php
+# Keep the storage framework dirs (and their .gitignore keepers) but ignore
+# the transient files Laravel writes into them at runtime.
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*.log
+!**/.gitignore
