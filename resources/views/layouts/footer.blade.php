@@ -15,7 +15,9 @@
       <ul class="flex flex-col gap-2">
         <li><a class="text-on-primary/80 hover:text-tertiary-fixed-dim transition-colors text-sm" href="{{ url('/contact') }}">Contact Us</a></li>
         <li><a class="text-on-primary/80 hover:text-tertiary-fixed-dim transition-colors text-sm" href="{{ url('/about-the-site') }}">About the Site</a></li>
-        <li><a class="text-on-primary/80 hover:text-tertiary-fixed-dim transition-colors text-sm" href="{{ url('/kindling-legacy') }}">Kindling Legacy 2026</a></li>
+        @foreach (\App\Models\Event::where('published', true)->orderBy('sort_order')->orderBy('event_date')->get() as $footerEvent)
+        <li><a class="text-on-primary/80 hover:text-tertiary-fixed-dim transition-colors text-sm" href="{{ url('/events/' . $footerEvent->slug) }}">{{ $footerEvent->title }}</a></li>
+        @endforeach
         <li><a class="text-on-primary/80 hover:text-tertiary-fixed-dim transition-colors text-sm" href="{{ url('/photo-gallery') }}">Photo Gallery</a></li>
       </ul>
     </div>

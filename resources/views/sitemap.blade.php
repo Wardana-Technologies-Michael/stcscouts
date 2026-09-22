@@ -31,7 +31,9 @@
 
                 <h3 class="font-weight-bold text-4 mb-3 text-color-primary">EVENTS & CAMPS</h3>
                 <ul class="list list-icons list-icons-sm mb-4">
-                    <li><a href="/kindling-legacy"><i class="far fa-file"></i> Kindling Legacy 2026</a></li>
+                    @foreach (\App\Models\Event::where('published', true)->orderBy('sort_order')->orderBy('event_date')->get() as $sitemapEvent)
+                    <li><a href="/events/{{ $sitemapEvent->slug }}"><i class="far fa-file"></i> {{ $sitemapEvent->title }}</a></li>
+                    @endforeach
                 </ul>
 
                 <h3 class="font-weight-bold text-4 mb-3 text-color-primary">THE TROOP</h3>

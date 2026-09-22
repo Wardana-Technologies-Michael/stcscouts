@@ -175,74 +175,34 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Activity 1 -->
+        @forelse (($recentReports ?? collect()) as $report)
         <article class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col group shadow-sm hover:shadow-md transition-all duration-300">
-          <div class="h-52 overflow-hidden relative">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                 alt="Mount Baldy Summit Hike" 
-                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuANSxw24CvT31aOJLUMhWHmo90QbwGPxVT5-yf-MvxkhbDSDsaLeCklN5uZv-HsDoejgyK9Lf211yDRT8RLeBFhnc0y7lf9wKJ6TTEgA6Lt2DrkZBQFjBu9i5_7mxR2ZPYWfKRzDF12e275DMduHeDpqUcvtTui4S5YQsdcXpWPKSa20HI8GAWA1L_jLw15cpdPRzyXQHgk8lE36JVrOWS5lsMXLkmLTxmfnAQlnOXXfhyHF8Kjs2mMx8W1Dr2aDxKbiFlQOaSYFfp9"/>
-            <div class="absolute top-4 left-4 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded">Expedition</div>
+          <div class="h-52 overflow-hidden relative bg-primary flex items-center justify-center">
+            @if ($report->banner_url)
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   alt="{{ $report->chip_label_text }}" src="{{ $report->banner_url }}"/>
+            @else
+              <span class="material-symbols-outlined text-on-primary opacity-90 transition-transform duration-500 group-hover:scale-110" style="font-size:72px;">{{ $report->icon }}</span>
+            @endif
+            <div class="absolute top-4 left-4 bg-on-primary/95 text-primary text-xs font-semibold px-3 py-1 rounded capitalize">{{ $report->category }}</div>
           </div>
           <div class="p-6 flex-1 flex flex-col">
             <div class="text-xs text-secondary mb-3 flex items-center gap-2">
               <span class="material-symbols-outlined text-sm">calendar_today</span>
-              Oct 12, 2025
+              {{ $report->year }}
             </div>
-            <h3 class="text-title-lg font-bold text-primary mb-3">Mount Baldy Summit Hike</h3>
+            <h3 class="text-title-lg font-bold text-primary mb-3">{{ $report->chip_label_text }}</h3>
             <p class="text-body-md text-secondary mb-6 flex-1 leading-relaxed">
-              A challenging 10-mile hike to the summit, testing scouts' physical endurance, group navigation, and outdoor survival teamwork.
+              {{ \Illuminate\Support\Str::limit(trim(strip_tags($report->body ?? '')), 140) ?: 'Read the full ' . $report->category . ' from the Year Reports archive.' }}
             </p>
-            <a class="text-primary hover:text-tertiary font-bold text-xs tracking-wider uppercase inline-flex items-center gap-1 w-fit transition-colors" href="{{ url('photo-gallery') }}">
+            <a class="text-primary hover:text-tertiary font-bold text-xs tracking-wider uppercase inline-flex items-center gap-1 w-fit transition-colors" href="{{ url('/' . $report->slug) }}">
               View Details <span class="material-symbols-outlined text-sm">chevron_right</span>
             </a>
           </div>
         </article>
-
-        <!-- Activity 2 -->
-        <article class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col group shadow-sm hover:shadow-md transition-all duration-300">
-          <div class="h-52 overflow-hidden relative">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                 alt="Pioneering Skills Bridge Building" 
-                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuyR3alUjs_cF3UjNsp8RWpnxbrmNhYzdYknLZ9UK3GeYYkX-WfylVq_F5d5WJx9GxgATQjz_F5M_IT9gtabM_chT1OwqsKhZwoX9d6eAhYrEEOMBT2ZBpj3-XEis_1tT4IlUAR5HdDtUZFc69X8WH2sNfLlliplFbrHjUE4VKiV8Fl1E9HgJ78MPQi5jmOFbnBPVgozmz35L_kgo5mOrFr5qlRGWVrdD6pQbJRPneI8ujCVemBC4fnixBldVNedbbSBQ7ZQur12YK"/>
-            <div class="absolute top-4 left-4 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded">Skills</div>
-          </div>
-          <div class="p-6 flex-1 flex flex-col">
-            <div class="text-xs text-secondary mb-3 flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm">calendar_today</span>
-              Sep 28, 2025
-            </div>
-            <h3 class="text-title-lg font-bold text-primary mb-3">Pioneering Skills Weekend</h3>
-            <p class="text-body-md text-secondary mb-6 flex-1 leading-relaxed">
-              Applying advanced knots and lashings to design and erect a stable, functional rope bridge across the local creek.
-            </p>
-            <a class="text-primary hover:text-tertiary font-bold text-xs tracking-wider uppercase inline-flex items-center gap-1 w-fit transition-colors" href="{{ url('badgework-new-syllabus') }}">
-              View Syllabus <span class="material-symbols-outlined text-sm">chevron_right</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Activity 3 -->
-        <article class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col group shadow-sm hover:shadow-md transition-all duration-300">
-          <div class="h-52 overflow-hidden relative">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                 alt="Local Park Restoration Project" 
-                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuClkJa-eXrSRCQDwTifF-k3r-z7XmCEAWizhz49ciwfuvQ6U0tSg81FvuZqJO0sZdihX1ojtv-5JzvKopW2Xd6tcIvoEL4Fyyy0Uf7cnQkqQtooMH4gDBWwstsTVaKG8A_7wTvlPnOpFP-dtjufGT_ebL0yRoe6beeF-f5cNsfdnnNFKWK1iyZgpkg9ybF822g7Ddv8wT3ksUws7KkKN6EqpDEDXGLWTmG41SnDoBotD8TAVmLs74611Sjkt-G_VRYLAritpRNIFDz0"/>
-            <div class="absolute top-4 left-4 bg-primary text-on-primary text-xs font-semibold px-3 py-1 rounded">Service</div>
-          </div>
-          <div class="p-6 flex-1 flex flex-col">
-            <div class="text-xs text-secondary mb-3 flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm">calendar_today</span>
-              Sep 15, 2025
-            </div>
-            <h3 class="text-title-lg font-bold text-primary mb-3">Local Park Restoration</h3>
-            <p class="text-body-md text-secondary mb-6 flex-1 leading-relaxed">
-              Scouts cleared invasive growth and planted over 50 native trees, contributing to environmental conservation and park beauty.
-            </p>
-            <a class="text-primary hover:text-tertiary font-bold text-xs tracking-wider uppercase inline-flex items-center gap-1 w-fit transition-colors" href="{{ url('/contact') }}">
-              Get Involved <span class="material-symbols-outlined text-sm">chevron_right</span>
-            </a>
-          </div>
-        </article>
+        @empty
+        <p class="text-body-md text-secondary col-span-full">No reports have been published yet.</p>
+        @endforelse
       </div>
     </div>
   </section>

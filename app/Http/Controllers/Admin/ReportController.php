@@ -86,6 +86,7 @@ class ReportController extends Controller
     public function destroy(Report $report)
     {
         $title = $report->title;
+        $this->deleteBanner($report->banner_path);
         $report->delete();
 
         return redirect()
@@ -112,19 +113,64 @@ class ReportController extends Controller
                 'regex:/^[^\/\s]+$/', // no slashes or whitespace
                 Rule::unique('reports', 'slug')->ignore($report?->id),
             ],
-            'body'        => 'nullable|string',
-            'sort_order'  => 'nullable|integer',
-            'published'   => 'nullable|boolean',
+            'body'         => 'nullable|string',
+            'sort_order'   => 'nullable|integer',
+            'published'    => 'nullable|boolean',
+            // 8 MB cap; images only.
+            'banner'        => 'nullable|image|mimes:jpg,jpeg,png,gif,webp|max:8192',
+            'remove_banner' => 'nullable|boolean',
         ]);
 
-        $data['slug'] = $data['slug']
+        $data['slug'] = ($data['slug'] ?? '')
             ?: $this->uniqueSlug($data['title'], $report?->id);
 
-        $data['icon']       = $data['icon'] ?: 'description';
+        $data['icon']       = ($data['icon'] ?? '') ?: 'description';
         $data['sort_order'] = $data['sort_order'] ?? 0;
         $data['published']  = $request->boolean('published');
 
+        // Banner image: a new upload replaces any existing one; an explicit
+        // "remove" clears it. Otherwise the column is left untouched.
+        if ($request->hasFile('banner')) {
+            $this->deleteBanner($report?->banner_path);
+            $data['banner_path'] = $this->storeBanner($request->file('banner'));
+        } elseif ($request->boolean('remove_banner')) {
+            $this->deleteBanner($report?->banner_path);
+            $data['banner_path'] = null;
+        }
+
+        // Never persist the raw file fields as model attributes.
+        unset($data['banner'], $data['remove_banner']);
+
         return $data;
+    }
+
+    /**
+     * Move an uploaded banner into public/uploads and return its public path.
+     */
+    protected function storeBanner($file): string
+    {
+        $name = Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) ?: 'banner';
+        $filename = $name . '-' . substr(md5(uniqid('', true)), 0, 8) . '.' . $file->getClientOriginalExtension();
+
+        $file->move(public_path('uploads'), $filename);
+
+        return '/uploads/' . $filename;
+    }
+
+    /**
+     * Delete a previously stored banner file if it lives under public/uploads.
+     */
+    protected function deleteBanner(?string $path): void
+    {
+        if (! $path || ! Str::startsWith($path, '/uploads/')) {
+            return;
+        }
+
+        $full = public_path(ltrim($path, '/'));
+
+        if (is_file($full)) {
+            @unlink($full);
+        }
     }
 
     /**

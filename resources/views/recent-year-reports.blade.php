@@ -326,7 +326,7 @@
 
     {{-- ═══════════════════════════════ JAVASCRIPT ══════════════════════════════════════════ --}}
     <script>
-        const RANGES = ['1995-1999','2000-2004','2005-2009','2010-2014','2015-2019','2020-2024'];
+        const RANGES = ['1995-1999','2000-2004','2005-2009','2010-2014','2015-2019','2020-2024','2025-2029'];
         const JUMP_NAV_HEIGHT = () => document.getElementById('ryr-jumpnav').offsetHeight + 64; // nav bar + jump bar
 
         /* ── Smooth-scroll with offset for sticky bars ─────────────── */

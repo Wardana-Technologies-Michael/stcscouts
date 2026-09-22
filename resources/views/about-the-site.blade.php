@@ -67,25 +67,22 @@
                                     class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
                             </div>
 
-                            <h2 class="font-weight-semi-bold">History of the Site</h2>
+                            <h4 class="font-weight-semi-bold">The present site:</h4>
 
-                            <p class="text-dark text-justify text-4">The present site is built on the Divi platform and is supported on all mainstream browsers.
-                                It was updated by a team led by the present Troop Leader J.S, Fernando, and comprising
-                                Webmaster J.C.W.A. de Silva, D.V.V Wijesinghe and P.C. Sirisena, with the guidance and
-                                assistance of Instructors Zafar Issadeen and Sidath Gajanayaka. The site includes a
-                                comprehensive History of the Scout Group, a complete series of Badgework contents, details
-                                of all the events of the Group, a complete gallery of images and videos of the Scout Group
-                                and many more. It is unarguably one of the most comprehensive Scout Group websites in the
-                                country.</p>
+                            <p class="text-dark text-justify text-4">In 2024, the website was rebuilt from the ground up on a modern platform — the Laravel
+                                framework with a Tailwind CSS front-end and a Vite build pipeline — replacing the earlier
+                                templated site. The Year Reports archive is now database-driven, so the complete timeline of
+                                annual reports, jamborees, camps and milestones can be maintained through a
+                                password-protected administration panel rather than by editing pages by hand. The site
+                                continues to include a comprehensive History of the Scout Group, a complete series of
+                                Badgework contents, details of all the events of the Group, a complete gallery of images and
+                                videos of the Scout Group and many more. It is unarguably one of the most comprehensive Scout
+                                Group websites in the country.</p>
 
                             <h2 class="font-weight-semi-bold">Site Administration</h2>
 
-                            <p class="text-dark text-justify text-4">At present, the website is administered by the following Instructors:</p>
-
-                            <p class="text-dark text-justify text-4">Zafar Issadeen & Sidath Gajanayaka</p>
-
                             <p class="text-dark text-justify text-4">The site is updated and maintained by the Troop Scout Web Team. The present Webmaster is
-                                Jehan de Silva</p>
+                                Michael Gunawardana.</p>
 
                             <h2 class="font-weight-semi-bold">Site Credits & Copyrights:</h2>
 

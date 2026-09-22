@@ -11,12 +11,29 @@
     </a>
 
     <!-- Desktop Navigation Links -->
+    @php $navEvents = \App\Models\Event::where('published', true)->orderBy('sort_order')->orderBy('event_date')->get(); @endphp
     <div class="hidden lg:flex items-center gap-0.5 xl:gap-1.5 h-full">
       <!-- Home -->
       <a class="text-secondary hover:text-primary font-semibold text-xs xl:text-sm px-2 xl:px-3 py-1.5 rounded-lg hover:bg-primary/5 transition-all duration-300 whitespace-nowrap" href="{{ url('/') }}">Home</a>
 
-      <!-- Kindling Legacy -->
-      <a class="text-secondary hover:text-primary font-semibold text-xs xl:text-sm px-2 xl:px-3 py-1.5 rounded-lg hover:bg-primary/5 transition-all duration-300 whitespace-nowrap" href="{{ url('/kindling-legacy') }}">Kindling Legacy</a>
+      <!-- Events (dynamic) -->
+      @if ($navEvents->count() === 1)
+        <a class="text-secondary hover:text-primary font-semibold text-xs xl:text-sm px-2 xl:px-3 py-1.5 rounded-lg hover:bg-primary/5 transition-all duration-300 whitespace-nowrap"
+           href="{{ url('/events/' . $navEvents->first()->slug) }}">{{ $navEvents->first()->title }}</a>
+      @elseif ($navEvents->count() > 1)
+        <div class="relative group nav-group h-full flex items-center">
+          <button class="flex items-center gap-1 text-secondary hover:text-primary font-semibold text-xs xl:text-sm px-2 xl:px-3 py-1.5 rounded-lg hover:bg-primary/5 transition-all duration-300 focus:outline-none whitespace-nowrap">
+            Events
+            <span class="material-symbols-outlined text-sm font-bold transition-transform duration-300 group-hover:rotate-180 inline-block">keyboard_arrow_down</span>
+          </button>
+          <div class="absolute left-0 top-full w-64 bg-surface border border-outline-variant/60 rounded-xl shadow-xl shadow-primary/10 hidden group-hover:block nav-dropdown z-50 py-1.5">
+            @foreach ($navEvents as $navEvent)
+              <a class="block px-3.5 py-2 text-sm text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-all mx-1.5"
+                 href="{{ url('/events/' . $navEvent->slug) }}">{{ $navEvent->title }}</a>
+            @endforeach
+          </div>
+        </div>
+      @endif
 
       <!-- The Troop -->
       <div class="relative group nav-group h-full flex items-center">
@@ -64,6 +81,7 @@
                 <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2010-2014') }}">2010 – 2014 Reports</a>
                 <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2015-2019') }}">2015 – 2019 Reports</a>
                 <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2020-2024') }}">2020 – 2024 Reports</a>
+                <a class="block text-sm text-secondary hover:text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all" href="{{ url('/recent-year-reports?range=2025-2029') }}">2025 – 2029 Reports</a>
                 <div class="h-[1px] bg-outline-variant/30 my-1 mx-2.5"></div>
                 <a class="block text-sm font-semibold text-primary hover:bg-primary/5 px-2.5 py-1.5 rounded-lg transition-all flex items-center gap-1" href="{{ url('/recent-year-reports') }}">
                   <span class="material-symbols-outlined text-sm">open_in_new</span>View All Reports
@@ -152,7 +170,27 @@
       <!-- Links container -->
       <div class="flex flex-col gap-4">
         <a class="text-secondary hover:text-primary font-semibold text-base transition-colors" href="{{ url('/') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Home</a>
-        <a class="text-secondary hover:text-primary font-semibold text-base transition-colors" href="{{ url('/kindling-legacy') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">Kindling Legacy</a>
+
+        {{-- Events (dynamic) --}}
+        @if ($navEvents->count() === 1)
+          <a class="text-secondary hover:text-primary font-semibold text-base transition-colors"
+             href="{{ url('/events/' . $navEvents->first()->slug) }}"
+             onclick="document.getElementById('mobile-drawer').classList.add('hidden')">{{ $navEvents->first()->title }}</a>
+        @elseif ($navEvents->count() > 1)
+          <div>
+            <button onclick="document.getElementById('mob-events').classList.toggle('hidden')" class="w-full text-left font-semibold text-base text-secondary hover:text-primary flex justify-between items-center focus:outline-none">
+              Events
+              <span class="material-symbols-outlined text-base">keyboard_arrow_down</span>
+            </button>
+            <div id="mob-events" class="hidden pl-4 mt-2 flex flex-col gap-2 border-l border-outline-variant">
+              @foreach ($navEvents as $navEvent)
+                <a class="text-sm text-secondary hover:text-primary py-1 block"
+                   href="{{ url('/events/' . $navEvent->slug) }}"
+                   onclick="document.getElementById('mobile-drawer').classList.add('hidden')">{{ $navEvent->title }}</a>
+              @endforeach
+            </div>
+          </div>
+        @endif
 
         <!-- Collapsible The Troop -->
         <div>
@@ -196,6 +234,7 @@
                 <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/recent-year-reports?range=2010-2014') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">2010 – 2014 Reports</a>
                 <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/recent-year-reports?range=2015-2019') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">2015 – 2019 Reports</a>
                 <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/recent-year-reports?range=2020-2024') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">2020 – 2024 Reports</a>
+                <a class="text-xs text-secondary hover:text-primary py-1 block" href="{{ url('/recent-year-reports?range=2025-2029') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">2025 – 2029 Reports</a>
                 <a class="text-xs font-semibold text-primary py-1 block" href="{{ url('/recent-year-reports') }}" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">View All Reports →</a>
               </div>
             </div>

@@ -113,6 +113,17 @@
                 <div>
                     <div class="ct-label">Troop Leader</div>
                     <div class="ct-value">S.T. Kulatilaka</div>
+                    <div class="ct-value mt-0.5"><a href="tel:+94767384896">+94 76 738 4896</a></div>
+                </div>
+            </div>
+
+            {{-- Webmaster --}}
+            <div class="ct-card ct-animate flex items-start gap-4">
+                <div class="ct-icon-wrap"><span class="material-symbols-outlined">code</span></div>
+                <div>
+                    <div class="ct-label">Webmaster</div>
+                    <div class="ct-value">Michael Gunawardana</div>
+                    <div class="ct-value mt-0.5"><a href="tel:+94707701762">+94 70 770 1762</a></div>
                 </div>
             </div>
 

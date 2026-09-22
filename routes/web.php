@@ -1,11 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Report;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\ReportController as AdminReportController;
+use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\Admin\MediaController;
+use App\Http\Controllers\Admin\MediaLibraryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +17,22 @@ use App\Http\Controllers\Admin\MediaController;
 |--------------------------------------------------------------------------
 */
 
-Route::get('', function () {
-    return view('home');
-});
+$home = function () {
+    $recentReports = Report::where('published', true)
+        ->orderByDesc('year')
+        ->orderByDesc('sort_order')
+        ->orderByDesc('id')
+        ->take(3)
+        ->get();
+
+    return view('home', compact('recentReports'));
+};
+
+Route::get('', $home);
 
 Route::get('/sitemap.xml', [SitemapController::class, 'generateXmlSitemap']);
 
-Route::get('/new', function () {
-    return view('home');
-});
+Route::get('/new', $home);
 
 Route::get('/sitemap', function () {
     return view('sitemap');
@@ -61,10 +72,6 @@ Route::get('/the-group-committee', function () {
 
 Route::get('/the-scout-dunk', function () {
     return view('the-scout-dunk');
-});
-
-Route::get('/kindling-legacy', function () {
-    return view('kindling-legacy');
 });
 
 Route::get('/badgework-old-syllabus', function () {
@@ -125,6 +132,8 @@ Route::get('/President’s-Award-Winners', function () {
 
 Route::get('/recent-year-reports', [ReportController::class, 'index']);
 
+Route::get('/events/{slug}', [EventController::class, 'show'])->where('slug', '[^/]+');
+
 /*
 |--------------------------------------------------------------------------
 | Admin (password-protected report management)
@@ -145,7 +154,22 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::put('/reports/{report}', [AdminReportController::class, 'update'])->name('reports.update');
     Route::delete('/reports/{report}', [AdminReportController::class, 'destroy'])->name('reports.destroy');
 
+    Route::get('/events', [AdminEventController::class, 'index'])->name('events.index');
+    Route::get('/events/create', [AdminEventController::class, 'create'])->name('events.create');
+    Route::post('/events', [AdminEventController::class, 'store'])->name('events.store');
+    Route::get('/events/{event}/edit', [AdminEventController::class, 'edit'])->name('events.edit');
+    Route::put('/events/{event}', [AdminEventController::class, 'update'])->name('events.update');
+    Route::delete('/events/{event}', [AdminEventController::class, 'destroy'])->name('events.destroy');
+
+    Route::get('/guide', fn () => view('admin.guide'))->name('guide');
+
     Route::post('/media', [MediaController::class, 'store'])->name('media.store');
+
+    Route::get('/media-library', [MediaLibraryController::class, 'index'])->name('media.index');
+    Route::post('/media-library/folder', [MediaLibraryController::class, 'createFolder'])->name('media.folder');
+    Route::post('/media-library/upload', [MediaLibraryController::class, 'upload'])->name('media.upload');
+    Route::delete('/media-library/file', [MediaLibraryController::class, 'destroy'])->name('media.destroy');
+    Route::delete('/media-library/folder', [MediaLibraryController::class, 'destroyFolder'])->name('media.folder.destroy');
 });
 
 /*

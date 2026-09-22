@@ -18,16 +18,14 @@ class ReportController extends Controller
             ->orderBy('id')
             ->get();
 
-        // Group by era band, then by year, preserving config order.
+        // Group by era band, then by year, preserving config order. Every
+        // configured era is included — even empty ones — so the jump-nav and
+        // the dropdown menu stay in step; empty bands render a placeholder.
         $byEra = [];
         foreach (config('reports.eras') as $era) {
             $entries = $reports->filter(
                 fn ($r) => $r->year >= $era['start'] && $r->year <= $era['end']
             );
-
-            if ($entries->isEmpty()) {
-                continue;
-            }
 
             $byEra[] = [
                 'meta'  => $era,

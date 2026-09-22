@@ -18,6 +18,10 @@
             <div class="col">
                 <div class="blog-posts single-post">
                     <article class="post post-large blog-single-post border-0 m-0 p-0">
+                        @if ($report->banner_url)
+                            <img src="{{ $report->banner_url }}" alt="{{ $report->title }}"
+                                 class="img-fluid rounded mb-4 w-100" style="max-height:420px;object-fit:cover;">
+                        @endif
                         <div class="post-content ms-0">
                             {!! $report->body !!}
                         </div>

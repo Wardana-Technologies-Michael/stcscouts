@@ -56,6 +56,13 @@ return [
             'label' => '2020 – 2024',
             'desc'  => 'Scouting adapted — virtual events, at-home activities, and online camp fires kept the troop connected through unprecedented times.',
         ],
+        [
+            'key'   => '2025-2029',
+            'start' => 2025,
+            'end'   => 2029,
+            'label' => '2025 – 2029',
+            'desc'  => 'The next chapter — carrying the troop’s legacy forward into the second half of the decade.',
+        ],
     ],
 
 ];

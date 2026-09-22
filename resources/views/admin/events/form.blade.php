@@ -1,18 +1,18 @@
 @extends('admin.layout')
 
-@section('admin_title', $mode === 'create' ? 'New report' : 'Edit report')
+@section('admin_title', $mode === 'create' ? 'New event' : 'Edit event')
 
 @section('content')
     @php
         $action = $mode === 'create'
-            ? route('admin.reports.store')
-            : route('admin.reports.update', $report);
+            ? route('admin.events.store')
+            : route('admin.events.update', $event);
     @endphp
 
     <div class="flex items-center gap-2 text-sm text-slate-400 mb-4">
-        <a href="{{ route('admin.reports.index') }}" class="hover:text-slate-600">All reports</a>
+        <a href="{{ route('admin.events.index') }}" class="hover:text-slate-600">All events</a>
         <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-        <span class="text-slate-600 font-medium">{{ $mode === 'create' ? 'New report' : 'Edit' }}</span>
+        <span class="text-slate-600 font-medium">{{ $mode === 'create' ? 'New event' : 'Edit' }}</span>
     </div>
 
     <form method="POST" action="{{ $action }}" enctype="multipart/form-data" class="space-y-6">
@@ -29,10 +29,17 @@
                     <div>
                         <label class="block text-sm font-semibold text-slate-700 mb-1.5">Title <span class="text-red-500">*</span></label>
                         <input type="text" name="title" required
-                               value="{{ old('title', $report->title) }}"
-                               placeholder="e.g. Year Report – 2024"
+                               value="{{ old('title', $event->title) }}"
+                               placeholder="e.g. Kindling Legacy Camp 2026"
                                class="w-full rounded-lg border-slate-300 focus:border-primary focus:ring-primary">
-                        <p class="text-xs text-slate-400 mt-1">Shown as the page heading.</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">Subtitle</label>
+                        <input type="text" name="subtitle"
+                               value="{{ old('subtitle', $event->subtitle) }}"
+                               placeholder="Short tagline or event type"
+                               class="w-full rounded-lg border-slate-300 focus:border-primary focus:ring-primary">
                     </div>
 
                     <div>
@@ -57,7 +64,7 @@
 
                         <textarea name="body" id="bodyField" rows="20"
                                   class="w-full rounded-lg border-slate-300 focus:border-primary focus:ring-primary font-mono text-sm leading-relaxed"
-                                  placeholder="<p>Write or paste HTML here…</p>">{{ old('body', $report->body) }}</textarea>
+                                  placeholder="<p>Write or paste HTML here…</p>">{{ old('body', $event->body) }}</textarea>
                     </div>
                 </div>
             </div>
@@ -65,49 +72,36 @@
             {{-- Sidebar --}}
             <div class="space-y-6">
                 <div class="bg-white rounded-2xl border border-slate-200 p-6 space-y-5">
+
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">Year <span class="text-red-500">*</span></label>
-                        <input type="number" name="year" required min="1900" max="2100"
-                               value="{{ old('year', $report->year) }}"
+                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">Start date</label>
+                        <input type="date" name="event_date"
+                               value="{{ old('event_date', $event->event_date?->format('Y-m-d')) }}"
                                class="w-full rounded-lg border-slate-300 focus:border-primary focus:ring-primary">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">Type <span class="text-red-500">*</span></label>
-                        <select name="category"
-                                class="w-full rounded-lg border-slate-300 focus:border-primary focus:ring-primary">
-                            <option value="report" @selected(old('category', $report->category) === 'report')>Report (annual)</option>
-                            <option value="event" @selected(old('category', $report->category) === 'event')>Event (jamboree, camp…)</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">Chip label</label>
-                        <input type="text" name="chip_label"
-                               value="{{ old('chip_label', $report->chip_label) }}"
-                               placeholder="Short label on the timeline"
+                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">End date</label>
+                        <input type="date" name="end_date"
+                               value="{{ old('end_date', $event->end_date?->format('Y-m-d')) }}"
                                class="w-full rounded-lg border-slate-300 focus:border-primary focus:ring-primary">
-                        <p class="text-xs text-slate-400 mt-1">Leave blank to use the title.</p>
+                        <p class="text-xs text-slate-400 mt-1">Leave blank for a single-day event.</p>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">Icon</label>
-                        <input type="text" name="icon"
-                               value="{{ old('icon', $report->icon) }}"
-                               placeholder="description"
-                               class="w-full rounded-lg border-slate-300 focus:border-primary focus:ring-primary font-mono text-sm">
-                        <p class="text-xs text-slate-400 mt-1">
-                            <a href="https://fonts.google.com/icons" target="_blank" class="text-accent hover:underline">Material Symbol</a>
-                            name (e.g. description, local_fire_department). Used when no banner is set.
-                        </p>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">Location</label>
+                        <input type="text" name="location"
+                               value="{{ old('location', $event->location) }}"
+                               placeholder="e.g. S. Thomas' College, Mount Lavinia"
+                               class="w-full rounded-lg border-slate-300 focus:border-primary focus:ring-primary">
                     </div>
 
                     <div>
                         <label class="block text-sm font-semibold text-slate-700 mb-1.5">Banner image</label>
 
-                        @if ($report->banner_path)
+                        @if ($event->banner_path)
                             <div class="mb-2 rounded-lg overflow-hidden border border-slate-200">
-                                <img src="{{ $report->banner_url }}" alt="Current banner"
+                                <img src="{{ $event->banner_url }}" alt="Current banner"
                                      class="w-full h-32 object-cover">
                             </div>
                             <label class="flex items-center gap-2 mb-2 cursor-pointer">
@@ -120,8 +114,8 @@
                         <input type="file" name="banner" accept="image/*"
                                class="w-full text-xs text-slate-600 file:mr-3 file:rounded-md file:border-0 file:bg-primary file:text-white file:px-3 file:py-1.5 file:font-semibold file:cursor-pointer">
                         <p class="text-xs text-slate-400 mt-1">
-                            Shown as the card banner on the home page. JPG, PNG, GIF or WebP, up to 8&nbsp;MB.
-                            {{ $report->banner_path ? 'Uploading a new image replaces the current one.' : 'Falls back to the icon above when empty.' }}
+                            JPG, PNG, GIF or WebP, up to 8&nbsp;MB.
+                            {{ $event->banner_path ? 'Uploading a new image replaces the current one.' : '' }}
                         </p>
                         @error('banner')
                             <p class="text-xs text-red-600 mt-1">{{ $message }}</p>
@@ -131,27 +125,27 @@
                     <div>
                         <label class="block text-sm font-semibold text-slate-700 mb-1.5">URL slug</label>
                         <div class="flex items-center rounded-lg border border-slate-300 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary overflow-hidden">
-                            <span class="px-2.5 text-slate-400 text-sm bg-slate-50 self-stretch flex items-center">/</span>
+                            <span class="px-2.5 text-slate-400 text-sm bg-slate-50 self-stretch flex items-center">/events/</span>
                             <input type="text" name="slug"
-                                   value="{{ old('slug', $report->slug) }}"
+                                   value="{{ old('slug', $event->slug) }}"
                                    placeholder="auto-generated from title"
                                    class="flex-1 border-0 focus:ring-0 text-sm font-mono">
                         </div>
-                        <p class="text-xs text-slate-400 mt-1">The web address. Leave blank to auto-generate. Changing this breaks old links.</p>
+                        <p class="text-xs text-slate-400 mt-1">Leave blank to auto-generate. Changing this breaks old links.</p>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">Order within year</label>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">Sort order</label>
                         <input type="number" name="sort_order"
-                               value="{{ old('sort_order', $report->sort_order) }}"
+                               value="{{ old('sort_order', $event->sort_order) }}"
                                class="w-full rounded-lg border-slate-300 focus:border-primary focus:ring-primary">
-                        <p class="text-xs text-slate-400 mt-1">Lower numbers appear first.</p>
+                        <p class="text-xs text-slate-400 mt-1">Lower numbers appear first in the events list.</p>
                     </div>
 
                     <label class="flex items-center gap-2 cursor-pointer">
                         <input type="hidden" name="published" value="0">
                         <input type="checkbox" name="published" value="1"
-                               @checked(old('published', $report->published))
+                               @checked(old('published', $event->published))
                                class="rounded border-slate-300 text-primary focus:ring-primary">
                         <span class="text-sm font-semibold text-slate-700">Published (visible on the site)</span>
                     </label>
@@ -160,15 +154,15 @@
                 <div class="flex flex-col gap-2">
                     <button type="submit"
                             class="w-full rounded-lg bg-primary text-white font-semibold py-2.5 hover:bg-primary/90 transition">
-                        {{ $mode === 'create' ? 'Create report' : 'Save changes' }}
+                        {{ $mode === 'create' ? 'Create event' : 'Save changes' }}
                     </button>
                     @if ($mode === 'edit')
-                        <a href="{{ url('/' . $report->slug) }}" target="_blank"
+                        <a href="{{ url('/events/' . $event->slug) }}" target="_blank"
                            class="w-full text-center rounded-lg border border-slate-300 text-slate-600 font-semibold py-2.5 hover:bg-slate-100 transition">
                             Preview ↗
                         </a>
                     @endif
-                    <a href="{{ route('admin.reports.index') }}"
+                    <a href="{{ route('admin.events.index') }}"
                        class="w-full text-center text-slate-400 hover:text-slate-600 text-sm py-1">Cancel</a>
                 </div>
             </div>

@@ -13,6 +13,7 @@ class Report extends Model
         'year',
         'category',
         'icon',
+        'banner_path',
         'body',
         'sort_order',
         'published',
@@ -30,6 +31,14 @@ class Report extends Model
     public function getChipLabelTextAttribute(): string
     {
         return $this->chip_label ?: $this->title;
+    }
+
+    /**
+     * Public URL for the banner image, or null when none is set.
+     */
+    public function getBannerUrlAttribute(): ?string
+    {
+        return $this->banner_path ? asset($this->banner_path) : null;
     }
 
     /**
