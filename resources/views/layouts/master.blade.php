@@ -40,8 +40,8 @@
 
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
@@ -155,28 +155,25 @@
 
 
     <!-- Vendor CSS -->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="vendor/animate/animate.compat.css">
-    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/animate/animate.compat.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/simple-line-icons/css/simple-line-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/owl.carousel/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/owl.carousel/assets/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/magnific-popup/magnific-popup.min.css') }}">
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/theme-elements.css">
-    <link rel="stylesheet" href="css/theme-blog.css">
-    <link rel="stylesheet" href="css/theme-shop.css">
+    <link rel="stylesheet" href="{{ asset('css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/theme-elements.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/theme-blog.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/theme-shop.css') }}">
 
     <!-- Skin CSS -->
-    <link id="skinCSS" rel="stylesheet" href="css/skins/default.css">
+    <link id="skinCSS" rel="stylesheet" href="{{ asset('css/skins/default.css') }}">
 
     <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-
-    <!-- Head Libs -->
-    <script src="vendor/modernizr/modernizr.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
 </head>
 
@@ -199,16 +196,16 @@
     </div>
 
     <!-- Vendor -->
-    <script src="vendor/plugins/js/plugins.min.js"></script>
+    <script src="{{ asset('vendor/plugins/js/plugins.min.js') }}"></script>
 
     <!-- Theme Base, Components and Settings -->
-    <script src="js/theme.js"></script>
+    <script src="{{ asset('js/theme.js') }}"></script>
 
     <!-- Theme Custom -->
-    <script src="js/custom.js"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 
     <!-- Theme Initialization Files -->
-    <script src="js/theme.init.js"></script>
+    <script src="{{ asset('js/theme.init.js') }}"></script>
 
 </body>
 
